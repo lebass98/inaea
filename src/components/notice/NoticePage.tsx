@@ -56,10 +56,6 @@ const NoticePage: React.FC = () => {
     navigate(`/notice/view/${id}`);
   };
 
-  const handleWriteClick = () => {
-    navigate('/notice/write');
-  };
-
   return (
     <div className="sub-page">
       {/* 상단 비주얼 이미지 */}
@@ -165,6 +161,7 @@ const NoticePage: React.FC = () => {
 
             {/* 페이지네이션 */}
             <div className="pagination">
+              <button className="page-button prev"><img src="/src/images/icons/icon_page_prev.svg" alt="이전" /></button>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <button
                   key={page}
@@ -174,7 +171,7 @@ const NoticePage: React.FC = () => {
                   {page}
                 </button>
               ))}
-              <button className="page-button next">▶</button>
+              <button className="page-button next"><img src="/src/images/icons/icon_page_next.svg" alt="다음" /></button>
             </div>
           </div>
 

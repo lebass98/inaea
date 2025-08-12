@@ -41,8 +41,11 @@
 
 .bread-crumb {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .bread-crumb li {
@@ -193,6 +196,7 @@
   box-sizing: border-box;
 }
 
+/* 오른쪽 메인 컨텐츠 */
 .sub-content-header {
   display: flex;
   align-items: center;
@@ -289,6 +293,15 @@
   gap: 0.8rem;
 }
 
+
+.search-input input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
 .search-input:focus {
   outline: none;
   border-color: #007bff;
@@ -299,6 +312,8 @@
   border: 1px solid #408DED;
   background-color: #F6FAFF;
   color: #408DED;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
 }
 
 .search-button:hover {}
@@ -379,84 +394,99 @@
   vertical-align: middle;
 }
 
-/* 페이지네이션 */
+/* 페이지네이션 - 이미지와 같은 형태로 스타일링 */
 .pagination {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 2rem;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 4rem;
 }
 
 .page-button {
-  padding: 0.5rem 1rem;
-  border: 1px solid #dee2e6;
-  background: white;
-  color: #333;
-  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  background: transparent;
+  color: #111;
+  border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  min-width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .page-button:hover {
-  background: #e9ecef;
+  color: #111;
 }
 
 .page-button.active {
   background: #007bff;
   color: white;
-  border-color: #007bff;
+  font-weight: 600;
 }
 
+.page-button.prev,
 .page-button.next {
+  color: #ccc;
   font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.page-button.prev:hover,
+.page-button.next:hover {
+  color: #666;
 }
 
 /* 반응형 디자인 */
 @media (max-width: 1024px) {
-  .notice-content {
+  .sub-content {
     flex-direction: column;
   }
-
-  .notice-sidebar {
+  
+  .sub-sidebar {
     width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  .visual-content h1 {
+  .visual-content-text h1 {
     font-size: 2.5rem;
   }
-
-  .notice-content {
+  
+  .sub-content {
     padding: 0 1rem;
   }
-
-  .notice-header {
+  
+  .sub-content-header {
     flex-direction: column;
     align-items: stretch;
     gap: 1rem;
   }
-
+  
   .write-button {
     margin-left: 0;
     align-self: stretch;
   }
-
+  
   .search-section {
     flex-direction: column;
     align-items: stretch;
   }
-
+  
   .notice-table {
     font-size: 0.9rem;
   }
-
+  
   .notice-table th,
   .notice-table td {
     padding: 0.75rem 0.5rem;
   }
-
+  
   .pagination {
     flex-wrap: wrap;
   }
