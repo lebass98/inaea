@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  src: url('/fonts/PretendardGOV-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  src: url('/fonts/PretendardGOV-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  src: url('/fonts/PretendardGOV-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  src: url('/fonts/PretendardGOV-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  src: url('/fonts/PretendardGOV-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  src: url('/fonts/PretendardGOV-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+figure {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Pretendard GOV', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    color: #111;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    border: none;
+    background: none;
+    /*outline: none;*/
+    padding: 0;
+    cursor: pointer;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+em {
+    font-style: normal;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
