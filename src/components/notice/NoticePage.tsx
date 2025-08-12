@@ -81,95 +81,103 @@ const NoticePage: React.FC = () => {
         <div className="sub-sidebar">
           <div className="sub-sidebar-inner">
             <h3>소통하기</h3>
-            <button className="sidebar-button active">공지사항</button>
-            <a href="#news" className="sidebar-link">뉴스</a>
-            <a href="#data" className="sidebar-link">자료실</a>
-            <a href="#statistics" className="sidebar-link">통계</a>
-            <a href="#faq" className="sidebar-link">FAQ</a>
+            <ul>
+              <li><a href="#news" className="sidebar-link active">공지사항</a></li>
+              <li><a href="#data" className="sidebar-link">FAQ</a></li>
+              <li><a href="#statistics" className="sidebar-link">문의하기</a></li>
+            </ul>
           </div>
         </div>
 
         {/* 오른쪽 메인 컨텐츠 */}
-        <div className="notice-main">
-          <div className="notice-header">
+        <div className="sub-content-wrap">
+          <div className="sub-content-header">
             <h2>공지사항</h2>
-            <span className="total-count">총 {totalItems}건</span>
-            <button onClick={handleWriteClick} className="write-button">
+
+            {/* <button onClick={handleWriteClick} className="write-button">
               글쓰기
-            </button>
+            </button> */}
           </div>
 
           {/* 검색 영역 */}
-          <div className="search-section">
-            <select
-              value={searchType}
-              onChange={(e) => setSearchType(e.target.value)}
-              className="search-type"
-            >
-              <option value="title_content">제목 + 내용</option>
-              <option value="title">제목</option>
-              <option value="content">내용</option>
-            </select>
-            <input
-              type="text"
-              placeholder="검색어를 입력해주세요."
-              value={searchKeyword}
-              onChange={(e) => setSearchKeyword(e.target.value)}
-              className="search-input"
-            />
-            <button onClick={handleSearch} className="search-button">검색</button>
-          </div>
+          <div className="sub-content-main">
+            <div className="search-section">
+              <span className="total-count">총 <strong>{totalItems}</strong>건</span>
+              <div className="search-type-wrap">
+                <select
+                  value={searchType}
+                  onChange={(e) => setSearchType(e.target.value)}
+                  className="search-type"
+                >
+                  <option value="title_content">제목 + 내용</option>
+                  <option value="title">제목</option>
+                  <option value="content">내용</option>
+                </select>
+                <label className="input search-input">
+                  <input
+                    type="text"
+                    placeholder="검색어를 입력해주세요."
+                    value={searchKeyword}
+                    onChange={(e) => setSearchKeyword(e.target.value)}
+                  />
+                </label>
+                <button onClick={handleSearch} className="search-button">검색</button>
+              </div>
+            </div>
 
-          {/* 공지사항 테이블 */}
-          <div className="notice-table-container">
-            <table className="notice-table">
-              <thead>
-                <tr>
-                  <th>번호</th>
-                  <th>제목</th>
-                  <th>첨부</th>
-                  <th>작성일</th>
-                  <th>조회수</th>
-                </tr>
-              </thead>
-              <tbody>
-                {notices.map((notice) => (
-                  <tr key={notice.id}>
-                    <td>{notice.id}</td>
-                    <td className="title-cell">
-                      <button
-                        onClick={() => handleTitleClick(notice.id)}
-                        className="title-button"
-                      >
-                        {notice.title}
-                      </button>
-                    </td>
-                    <td>
-                      {notice.hasAttachment && (
-                        <span className="attachment-icon">📎</span>
-                      )}
-                    </td>
-                    <td>{notice.date}</td>
-                    <td>{notice.views}</td>
+            {/* 공지사항 테이블 */}
+
+            <div className="notice-table-container">
+              <table className="notice-table">
+                <thead>
+                  <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>첨부</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {notices.map((notice) => (
+                    <tr key={notice.id}>
+                      <td>{notice.id}</td>
+                      <td className="title-cell">
+                        <button
+                          onClick={() => handleTitleClick(notice.id)}
+                          className="title-button"
+                        >
+                          {notice.title}
+                        </button>
+                      </td>
+                      <td>
+                        {notice.hasAttachment && (
+                          <span className="attachment-icon"><img src="/src/images/icons/icon_file-att.svg" alt="첨부파일" /></span>
+                        )}
+                      </td>
+                      <td>{notice.date}</td>
+                      <td>{notice.views}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* 페이지네이션 */}
+            <div className="pagination">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => handlePageChange(page)}
+                  className={`page-button ${currentPage === page ? 'active' : ''}`}
+                >
+                  {page}
+                </button>
+              ))}
+              <button className="page-button next">▶</button>
+            </div>
           </div>
 
-          {/* 페이지네이션 */}
-          <div className="pagination">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                onClick={() => handlePageChange(page)}
-                className={`page-button ${currentPage === page ? 'active' : ''}`}
-              >
-                {page}
-              </button>
-            ))}
-            <button className="page-button next">▶</button>
-          </div>
         </div>
       </div>
     </div>

@@ -129,7 +129,12 @@
   background-color: #fff;
   border-radius: 2.4rem;
 }
-
+.sub-sidebar .sub-sidebar-inner ul {
+  gap:0.2rem;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
 .sidebar-button {
   width: 100%;
   padding: 1rem;
@@ -158,46 +163,77 @@
 }
 
 .sidebar-link {
-  display: block;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  color: #666;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border-radius: 10rem;
+  padding:0 1.6rem 0 2.4rem;
+  display:block;
+  height:6.4rem;
+  line-height:6.4rem;
+  color:#111;
+  font-weight:600;
+  background-color:#fff;
+  transition:all 0.3s ease;
 }
-
+.sidebar-link.active,
 .sidebar-link:hover {
-  background: #e9ecef;
-  color: #333;
+  background: #62ABFF;
+  color: #fff;
+  transition:all 0.3s ease;
 }
 
-/* 오른쪽 메인 컨텐츠 */
-.notice-main {
+.sub-content-wrap {
   flex: 1;
 }
 
-.notice-header {
+/* 오른쪽 메인 컨텐츠 */
+.sub-content-main {
+  flex: 1;
+  padding: 6rem 4rem;
+  background-color: #fff;
+  border-radius: 2.4rem;
+  box-sizing: border-box;
+}
+
+.sub-content-header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   flex-wrap: wrap;
 }
 
-.notice-header h2 {
-  font-size: 2rem;
-  font-weight: 600;
+.sub-content-header h2:before {
+  content: "";
+  display: inline-block;
+  width: 3.6rem;
+  height: 2.2rem;
+  background-image: url('/src/images/common/subpage-title-dot.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin-right: 1.2rem;
+}
+
+.sub-content-header h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
   margin: 0;
-  color: #333;
+  color: #111;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .total-count {
-  font-size: 1rem;
-  color: #666;
-  background: #e9ecef;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.total-count strong {
+  color: #004870;
 }
 
 .write-button {
@@ -223,22 +259,34 @@
   gap: 1rem;
   margin-bottom: 2rem;
   align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.search-type {
-  padding: 0.75rem;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  background: white;
+.search-type {}
+
+.search-input:before {
+  content: "";
+  display: inline-block;
+  margin-right: 0.8rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url('/src/images/icons/icon_input_srch.svg');
+  background-size: 2.4rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  box-sizing: border-box;
 }
 
 .search-input {
-  flex: 1;
-  padding: 0.75rem;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  min-width: 28rem;
+  position: relative;
+}
+
+.search-type-wrap {
+  display: flex;
+  gap: 0.8rem;
 }
 
 .search-input:focus {
@@ -248,47 +296,41 @@
 }
 
 .search-button {
-  padding: 0.75rem 1.5rem;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border: 1px solid #408DED;
+  background-color: #F6FAFF;
+  color: #408DED;
 }
 
-.search-button:hover {
-  background: #0056b3;
-}
+.search-button:hover {}
 
 /* 테이블 */
-.notice-table-container {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
-}
+.notice-table-container {}
 
 .notice-table {
   width: 100%;
   border-collapse: collapse;
+  border-top:2px solid #111;
 }
 
 .notice-table th {
-  background: #f8f9fa;
-  padding: 1rem;
+  background: #F4F6F8;
+  padding: 2.1rem;
   text-align: left;
+  font-weight: 600;
+  font-size: 1.8rem;
   font-weight: 600;
   color: #333;
   border-bottom: 1px solid #dee2e6;
+  text-align: center;
 }
 
 .notice-table td {
   padding: 1rem;
-  border-bottom: 1px solid #f1f3f4;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color:#111;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
   vertical-align: middle;
 }
 
@@ -334,8 +376,7 @@
 }
 
 .attachment-icon {
-  font-size: 1.2rem;
-  color: #007bff;
+  vertical-align: middle;
 }
 
 /* 페이지네이션 */
