@@ -31,9 +31,9 @@ const Header: React.FC = () => {
             </li>
             <li>
               <select name="" id="">
-              <option value="">학부모</option>
-              <option value="">학생</option>
-              <option value="">교사</option>
+                <option value="">학부모</option>
+                <option value="">학생</option>
+                <option value="">교사</option>
               </select>
             </li>
             <li>

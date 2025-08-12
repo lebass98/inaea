@@ -107,17 +107,20 @@
 
 
 .nav-util select {
-  background: none;  
-  border:1px solid #D9E3ED;
-  background-color:#f4f6f8;
+  background: none;
+  border: 1px solid #D9E3ED;
+  background-color: #f4f6f8;
   border-radius: .8rem;
-  appearance: none;        /* 표준 */
-  -webkit-appearance: none; /* 크롬, 사파리 */
-  -moz-appearance: none;    /* 파이어폭스 */
+  appearance: none;
+  /* 표준 */
+  -webkit-appearance: none;
+  /* 크롬, 사파리 */
+  -moz-appearance: none;
+  /* 파이어폭스 */
   font-size: 1.5rem;
-  color:#111;
-  font-weight:400;
-  display:block;
+  color: #111;
+  font-weight: 400;
+  display: block;
   background-image: url('/src/images/icons/icon_header_sel_ar.svg');
   background-repeat: no-repeat;
   background-position: right 0.8rem center;
@@ -129,6 +132,7 @@
 .nav-util .util-alarm-wrap {
   position: relative;
 }
+
 .nav-util .util-alarm-wrap em {
   position: absolute;
   right: 0;
@@ -143,9 +147,10 @@
   font-size: 1.2rem;
   font-weight: 700;
 }
+
 .nav-util .util-vertical-line {
-  width:0.2rem;
-  height:1.6rem;
-  background-color:#DFE3E8;
+  width: 0.2rem;
+  height: 1.6rem;
+  background-color: #DFE3E8;
   display: block;
 }

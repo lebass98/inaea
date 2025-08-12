@@ -132,12 +132,14 @@
   background-color: #fff;
   border-radius: 2.4rem;
 }
+
 .sub-sidebar .sub-sidebar-inner ul {
-  gap:0.2rem;
-  display:flex;
+  gap: 0.2rem;
+  display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
 }
+
 .sidebar-button {
   width: 100%;
   padding: 1rem;
@@ -167,20 +169,21 @@
 
 .sidebar-link {
   border-radius: 10rem;
-  padding:0 1.6rem 0 2.4rem;
-  display:block;
-  height:6.4rem;
-  line-height:6.4rem;
-  color:#111;
-  font-weight:600;
-  background-color:#fff;
-  transition:all 0.3s ease;
+  padding: 0 1.6rem 0 2.4rem;
+  display: block;
+  height: 6.4rem;
+  line-height: 6.4rem;
+  color: #111;
+  font-weight: 600;
+  background-color: #fff;
+  transition: all 0.3s ease;
 }
+
 .sidebar-link.active,
 .sidebar-link:hover {
   background: #62ABFF;
   color: #fff;
-  transition:all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .sub-content-wrap {
@@ -312,11 +315,9 @@
   border: 1px solid #408DED;
   background-color: #F6FAFF;
   color: #408DED;
-  padding: 0.75rem 1.5rem;
   border-radius: 6px;
 }
 
-.search-button:hover {}
 
 /* 테이블 */
 .notice-table-container {}
@@ -324,7 +325,7 @@
 .notice-table {
   width: 100%;
   border-collapse: collapse;
-  border-top:2px solid #111;
+  border-top: 2px solid #111;
 }
 
 .notice-table th {
@@ -343,7 +344,7 @@
   padding: 1rem;
   font-size: 1.8rem;
   font-weight: 400;
-  color:#111;
+  color: #111;
   text-align: center;
   border-bottom: 1px solid #ddd;
   vertical-align: middle;
@@ -447,7 +448,7 @@
   .sub-content {
     flex-direction: column;
   }
-  
+
   .sub-sidebar {
     width: 100%;
   }
@@ -457,36 +458,36 @@
   .visual-content-text h1 {
     font-size: 2.5rem;
   }
-  
+
   .sub-content {
     padding: 0 1rem;
   }
-  
+
   .sub-content-header {
     flex-direction: column;
     align-items: stretch;
     gap: 1rem;
   }
-  
+
   .write-button {
     margin-left: 0;
     align-self: stretch;
   }
-  
+
   .search-section {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .notice-table {
     font-size: 0.9rem;
   }
-  
+
   .notice-table th,
   .notice-table td {
     padding: 0.75rem 0.5rem;
   }
-  
+
   .pagination {
     flex-wrap: wrap;
   }
