@@ -54,7 +54,7 @@ const NoticeView: React.FC = () => {
       </ul>
       <br />
       <p>
-      <img src="/src/images/sub/bbs_cont_01.jpg" alt="설명회 이미지" />
+              <img src="/images/sub/bbs_cont_01.jpg" alt="설명회 이미지" />
       </p>
       <br />
       <h4>■ 주요 내용</h4>
@@ -159,7 +159,7 @@ const NoticeView: React.FC = () => {
                     {noticeDetail.attachments.map((file, index) => (
                       <li>
                         <span key={index} className="attachment-item">
-                          <em className="attachment-icon"><img src="/src/images/icons/icon_file-att.svg" alt="첨부파일" /></em>
+                          <em className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></em>
                           <a href="#" className="attachment-link">{file}</a>
                         </span>
                       </li>

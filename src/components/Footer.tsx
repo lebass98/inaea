@@ -9,10 +9,10 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <div className="footer-logos">
               <div className="logo-item">
-                <img src="/src/images/common/footer-logo_edu.svg" alt="교육부 로고" />
+                <img src="/images/common/footer-logo_edu.svg" alt="교육부 로고" />
               </div>
               <div className="logo-item">
-                <img src="/src/images/common/footer-logo_kice.svg" alt="KICE 로고" />
+                <img src="/images/common/footer-logo_kice.svg" alt="KICE 로고" />
               </div>
             </div>
             <div className="footer-info">

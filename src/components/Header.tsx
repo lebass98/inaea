@@ -13,7 +13,7 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header-inner">
         <div className="logo">
-          <a href="/"><h1><img src="/src/images/common/inaea_top_logo.svg" alt="Inaea" /></h1></a>
+          <a href="/"><h1><img src="/images/common/inaea_top_logo.svg" alt="Inaea" /></h1></a>
         </div>
         <nav className="navigation">
           <ul className="nav-gnb">
@@ -47,10 +47,10 @@ const Header: React.FC = () => {
           </ul>
           <ul className="nav-util-list">
             <li className="util-alarm-wrap">
-              <a href="#"><img src="/src/images/icons/icon_header_alram.svg" alt="알림" /><em>1</em></a>
+              <a href="#"><img src="/images/icons/icon_header_alram.svg" alt="알림" /><em>1</em></a>
             </li>
             <li>
-              <a href="#"><img src="/src/images/icons/icon_header_ham.svg" alt="알림" /></a>
+                              <a href="#"><img src="/images/icons/icon_header_ham.svg" alt="알림" /></a>
             </li>
           </ul>
         </div>

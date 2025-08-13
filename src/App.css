@@ -126,7 +126,7 @@ select {
   /* 크롬, 사파리 */
   -moz-appearance: none;
   /* 파이어폭스 */
-  background-image: url('/src/images/icons/icon_sel_ar.svg');
+  background-image: url('/images/icons/icon_sel_ar.svg');
   background-repeat: no-repeat;
   background-position: right 0.8rem center;
   background-size: 1.6rem;

@@ -15,7 +15,7 @@ interface SubVisualProps {
 const SubVisual: React.FC<SubVisualProps> = ({ 
   title, 
   breadcrumbs, 
-  backgroundImage = '/src/images/sub/sub_visual_4_1.svg' 
+          backgroundImage = '/images/sub/sub_visual_4_1.svg' 
 }) => {
   return (
     <div className="visual-section">

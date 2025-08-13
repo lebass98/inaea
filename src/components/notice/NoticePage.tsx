@@ -39,27 +39,27 @@ const NoticePage: React.FC = () => {
 
   // 샘플 데이터
   const notices: NoticeItem[] = [
-    { id: 21, title: '2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내 2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 20, title: '2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내 2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 19, title: '2025학년도 맞춤형 학업성취도 자율평가 결과표 안내자료', hasAttachment: true, date: '2025-06-12', views: 142, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 18, title: '2025학년도 맞춤형 학업성취도 자율평가 시행 일정 안내', hasAttachment: false, date: '2025-06-12', views: 98, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 17, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 모집', hasAttachment: true, date: '2025-06-12', views: 203, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 16, title: '2025학년도 맞춤형 학업성취도 자율평가 매뉴얼', hasAttachment: true, date: '2025-06-12', views: 87, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 15, title: '2025학년도 맞춤형 학업성취도 자율평가 시스템 점검 안내', hasAttachment: false, date: '2025-06-12', views: 134, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 14, title: '2025학년도 맞춤형 학업성취도 자율평가 문의사항 안내', hasAttachment: false, date: '2025-06-12', views: 76, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 13, title: '2025학년도 맞춤형 학업성취도 자율평가 결과 발표', hasAttachment: true, date: '2025-06-12', views: 189, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 12, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 방법', hasAttachment: true, date: '2025-06-12', views: 112, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 11, title: '2025학년도 맞춤형 학업성취도 자율평가 일정 변경 안내', hasAttachment: false, date: '2025-06-12', views: 95, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 10, title: '2025학년도 맞춤형 학업성취도 자율평가 FAQ', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 9, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 확정', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 8, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 기준', hasAttachment: true, date: '2025-06-12', views: 178, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 7, title: '2025학년도 맞춤형 학업성취도 자율평가 시스템 오픈', hasAttachment: false, date: '2025-06-12', views: 223, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 6, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 신청서', hasAttachment: true, date: '2025-06-12', views: 89, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 5, title: '2025학년도 맞춤형 학업성취도 자율평가 설명회 자료', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 4, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 방법', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 3, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 선정', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 2, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 도구', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
-    { id: 1, title: '2025학년도 맞춤형 학업성취도 자율평가 최종 안내', hasAttachment: true, date: '2025-06-12', views: 198, thumbnail: '/src/images/sub/bbs_thumb_01.png' }
+    { id: 21, title: '2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내 2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 20, title: '2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내 2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 19, title: '2025학년도 맞춤형 학업성취도 자율평가 결과표 안내자료', hasAttachment: true, date: '2025-06-12', views: 142, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 18, title: '2025학년도 맞춤형 학업성취도 자율평가 시행 일정 안내', hasAttachment: false, date: '2025-06-12', views: 98, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 17, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 모집', hasAttachment: true, date: '2025-06-12', views: 203, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 16, title: '2025학년도 맞춤형 학업성취도 자율평가 매뉴얼', hasAttachment: true, date: '2025-06-12', views: 87, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 15, title: '2025학년도 맞춤형 학업성취도 자율평가 시스템 점검 안내', hasAttachment: false, date: '2025-06-12', views: 134, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 14, title: '2025학년도 맞춤형 학업성취도 자율평가 문의사항 안내', hasAttachment: false, date: '2025-06-12', views: 76, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 13, title: '2025학년도 맞춤형 학업성취도 자율평가 결과 발표', hasAttachment: true, date: '2025-06-12', views: 189, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 12, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 방법', hasAttachment: true, date: '2025-06-12', views: 112, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 11, title: '2025학년도 맞춤형 학업성취도 자율평가 일정 변경 안내', hasAttachment: false, date: '2025-06-12', views: 95, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 10, title: '2025학년도 맞춤형 학업성취도 자율평가 FAQ', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 9, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 확정', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 8, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 기준', hasAttachment: true, date: '2025-06-12', views: 178, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 7, title: '2025학년도 맞춤형 학업성취도 자율평가 시스템 오픈', hasAttachment: false, date: '2025-06-12', views: 223, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 6, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 신청서', hasAttachment: true, date: '2025-06-12', views: 89, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 5, title: '2025학년도 맞춤형 학업성취도 자율평가 설명회 자료', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 4, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 방법', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 3, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 선정', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 2, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 도구', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/images/sub/bbs_thumb_01.png' },
+    { id: 1, title: '2025학년도 맞춤형 학업성취도 자율평가 최종 안내', hasAttachment: true, date: '2025-06-12', views: 198, thumbnail: '/images/sub/bbs_thumb_01.png' }
   ];
 
   const totalItems = 74;
@@ -159,11 +159,11 @@ const NoticePage: React.FC = () => {
                 {/* 현재 모드에 따라 다른 버튼 표시 */}
                 {viewMode === 'list' ? (
                   <button onClick={toggleViewMode} className="gal-view-mode-btn">
-                    <img src="/src/images/common/bbs_gal_btn.svg" alt="갤러리 보기" />
+                    <img src="/images/common/bbs_gal_btn.svg" alt="갤러리 보기" />
                   </button>
                 ) : (
                   <button onClick={toggleViewMode} className="list-view-mode-btn">
-                    <img src="/src/images/common/bbs_list_btn.svg" alt="리스트 보기" />
+                    <img src="/images/common/bbs_list_btn.svg" alt="리스트 보기" />
                   </button>
                 )}
               </div>
@@ -234,7 +234,7 @@ const NoticePage: React.FC = () => {
                           </td>
                           <td>
                             {notice.hasAttachment && (
-                              <span className="attachment-icon"><img src="/src/images/icons/icon_file-att.svg" alt="첨부파일" /></span>
+                              <span className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></span>
                             )}
                           </td>
                           <td>{notice.date}</td>
@@ -254,7 +254,7 @@ const NoticePage: React.FC = () => {
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
               >
-                <img src="/src/images/icons/icon_page_prev.svg" alt="이전" />
+                <img src="/images/icons/icon_page_prev.svg" alt="이전" />
               </button>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <button
@@ -270,7 +270,7 @@ const NoticePage: React.FC = () => {
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
               >
-                <img src="/src/images/icons/icon_page_next.svg" alt="다음" />
+                <img src="/images/icons/icon_page_next.svg" alt="다음" />
               </button>
             </div>
           </div>
