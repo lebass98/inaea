@@ -395,6 +395,22 @@
   color: #666;
 }
 
+/* 비활성화된 페이지네이션 버튼 스타일 */
+.page-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+.page-button.disabled:hover {
+  color: #ccc;
+  transform: none;
+}
+
+.page-button.disabled img {
+  opacity: 0.5;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 1024px) {
   .sub-content {

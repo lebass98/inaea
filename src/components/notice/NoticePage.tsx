@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
@@ -66,12 +66,37 @@ const NoticePage: React.FC = () => {
   const itemsPerPage = 20;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
+  // 현재 페이지에 해당하는 데이터만 필터링
+  const currentPageData = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return notices.slice(startIndex, endIndex);
+  }, [currentPage, notices]);
+
   const handleSearch = () => {
     console.log('검색:', searchType, searchKeyword);
+    // 검색 시 첫 페이지로 이동
+    setCurrentPage(1);
   };
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
+    // 페이지 변경 시 상단으로 스크롤
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const handleTitleClick = (id: number) => {
@@ -151,7 +176,7 @@ const NoticePage: React.FC = () => {
                 <div className="gallery-mode">
                   <div className="gallery-mode-inner">
                     <div className="gallery-grid">
-                      {notices.map((notice) => (
+                      {currentPageData.map((notice) => (
                         <div key={notice.id} className="gallery-item"
                           onClick={() => handleTitleClick(notice.id)}>
                           <div className="gallery-item-content">
@@ -196,7 +221,7 @@ const NoticePage: React.FC = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {notices.map((notice) => (
+                      {currentPageData.map((notice) => (
                         <tr key={notice.id}>
                           <td>{notice.id}</td>
                           <td className="title-cell">
@@ -224,7 +249,13 @@ const NoticePage: React.FC = () => {
 
             {/* 페이지네이션 */}
             <div className="pagination">
-              <button className="page-button prev"><img src="/src/images/icons/icon_page_prev.svg" alt="이전" /></button>
+              <button 
+                className={`page-button prev ${currentPage === 1 ? 'disabled' : ''}`}
+                onClick={handlePrevPage}
+                disabled={currentPage === 1}
+              >
+                <img src="/src/images/icons/icon_page_prev.svg" alt="이전" />
+              </button>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <button
                   key={page}
@@ -234,7 +265,13 @@ const NoticePage: React.FC = () => {
                   {page}
                 </button>
               ))}
-              <button className="page-button next"><img src="/src/images/icons/icon_page_next.svg" alt="다음" /></button>
+              <button 
+                className={`page-button next ${currentPage === totalPages ? 'disabled' : ''}`}
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+              >
+                <img src="/src/images/icons/icon_page_next.svg" alt="다음" />
+              </button>
             </div>
           </div>
 
