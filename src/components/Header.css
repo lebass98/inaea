@@ -50,6 +50,11 @@
   width: 12rem;
   display: block;
   text-align: center;
+  transition: all 0.2s ease;
+}
+.navigation .nav-gnb a:hover {
+  color: #408DED;
+  transition: all 0.2s ease;
 }
 
 .nav-user {

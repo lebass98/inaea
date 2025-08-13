@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SubVisual from '../SubVisual';
+import SubLeftMenu from '../SubLeftMenu';
 import './NoticePage.css';
 
 interface NoticeItem {
@@ -8,6 +10,7 @@ interface NoticeItem {
   hasAttachment: boolean;
   date: string;
   views: number;
+  thumbnail?: string; // 썸네일 이미지 필드 추가
 }
 
 const NoticePage: React.FC = () => {
@@ -15,29 +18,48 @@ const NoticePage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchType, setSearchType] = useState('title_content');
   const [searchKeyword, setSearchKeyword] = useState('');
+  const [viewMode, setViewMode] = useState<'list' | 'gallery'>('list'); // 뷰 모드 상태 추가
+
+  // 사이드바 메뉴 데이터
+  const sidebarMenuItems = [
+    { id: 'news', label: '보도자료', href: '#news', isActive: true },
+    { id: 'data', label: 'FAQ', href: '#data', isActive: false },
+    { id: 'statistics', label: '보도자료', href: '#statistics', isActive: false }
+  ];
+
+  // 비주얼 섹션 데이터
+  const visualData = {
+    title: '정보마당',
+    breadcrumbs: [
+      { label: 'HOME', href: '/', isHome: true },
+      { label: '정보마당' },
+      { label: '보도자료', isActive: true }
+    ]
+  };
 
   // 샘플 데이터
   const notices: NoticeItem[] = [
-    { id: 20, title: '2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내', hasAttachment: true, date: '2025-06-12', views: 156 },
-    { id: 19, title: '2025학년도 맞춤형 학업성취도 자율평가 결과표 안내자료', hasAttachment: true, date: '2025-06-12', views: 142 },
-    { id: 18, title: '2025학년도 맞춤형 학업성취도 자율평가 시행 일정 안내', hasAttachment: false, date: '2025-06-12', views: 98 },
-    { id: 17, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 모집', hasAttachment: true, date: '2025-06-12', views: 203 },
-    { id: 16, title: '2025학년도 맞춤형 학업성취도 자율평가 매뉴얼', hasAttachment: true, date: '2025-06-12', views: 87 },
-    { id: 15, title: '2025학년도 맞춤형 학업성취도 자율평가 시스템 점검 안내', hasAttachment: false, date: '2025-06-12', views: 134 },
-    { id: 14, title: '2025학년도 맞춤형 학업성취도 자율평가 문의사항 안내', hasAttachment: false, date: '2025-06-12', views: 76 },
-    { id: 13, title: '2025학년도 맞춤형 학업성취도 자율평가 결과 발표', hasAttachment: true, date: '2025-06-12', views: 189 },
-    { id: 12, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 방법', hasAttachment: true, date: '2025-06-12', views: 112 },
-    { id: 11, title: '2025학년도 맞춤형 학업성취도 자율평가 일정 변경 안내', hasAttachment: false, date: '2025-06-12', views: 95 },
-    { id: 10, title: '2025학년도 맞춤형 학업성취도 자율평가 FAQ', hasAttachment: false, date: '2025-06-12', views: 167 },
-    { id: 9, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 확정', hasAttachment: true, date: '2025-06-12', views: 145 },
-    { id: 8, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 기준', hasAttachment: true, date: '2025-06-12', views: 178 },
-    { id: 7, title: '2025학년도 맞춤형 학업성취도 자율평가 시스템 오픈', hasAttachment: false, date: '2025-06-12', views: 223 },
-    { id: 6, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 신청서', hasAttachment: true, date: '2025-06-12', views: 89 },
-    { id: 5, title: '2025학년도 맞춤형 학업성취도 자율평가 설명회 자료', hasAttachment: true, date: '2025-06-12', views: 156 },
-    { id: 4, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 방법', hasAttachment: true, date: '2025-06-12', views: 134 },
-    { id: 3, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 선정', hasAttachment: false, date: '2025-06-12', views: 167 },
-    { id: 2, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 도구', hasAttachment: true, date: '2025-06-12', views: 145 },
-    { id: 1, title: '2025학년도 맞춤형 학업성취도 자율평가 최종 안내', hasAttachment: true, date: '2025-06-12', views: 198 }
+    { id: 21, title: '2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내 2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 20, title: '2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내 2025학년도 맞춤형 학업성취도 자율평가 설명회 개최 안내', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 19, title: '2025학년도 맞춤형 학업성취도 자율평가 결과표 안내자료', hasAttachment: true, date: '2025-06-12', views: 142, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 18, title: '2025학년도 맞춤형 학업성취도 자율평가 시행 일정 안내', hasAttachment: false, date: '2025-06-12', views: 98, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 17, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 모집', hasAttachment: true, date: '2025-06-12', views: 203, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 16, title: '2025학년도 맞춤형 학업성취도 자율평가 매뉴얼', hasAttachment: true, date: '2025-06-12', views: 87, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 15, title: '2025학년도 맞춤형 학업성취도 자율평가 시스템 점검 안내', hasAttachment: false, date: '2025-06-12', views: 134, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 14, title: '2025학년도 맞춤형 학업성취도 자율평가 문의사항 안내', hasAttachment: false, date: '2025-06-12', views: 76, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 13, title: '2025학년도 맞춤형 학업성취도 자율평가 결과 발표', hasAttachment: true, date: '2025-06-12', views: 189, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 12, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 방법', hasAttachment: true, date: '2025-06-12', views: 112, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 11, title: '2025학년도 맞춤형 학업성취도 자율평가 일정 변경 안내', hasAttachment: false, date: '2025-06-12', views: 95, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 10, title: '2025학년도 맞춤형 학업성취도 자율평가 FAQ', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 9, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 확정', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 8, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 기준', hasAttachment: true, date: '2025-06-12', views: 178, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 7, title: '2025학년도 맞춤형 학업성취도 자율평가 시스템 오픈', hasAttachment: false, date: '2025-06-12', views: 223, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 6, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 신청서', hasAttachment: true, date: '2025-06-12', views: 89, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 5, title: '2025학년도 맞춤형 학업성취도 자율평가 설명회 자료', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 4, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 방법', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 3, title: '2025학년도 맞춤형 학업성취도 자율평가 참여 학교 선정', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 2, title: '2025학년도 맞춤형 학업성취도 자율평가 평가 도구', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/src/images/sub/bbs_thumb_01.png' },
+    { id: 1, title: '2025학년도 맞춤형 학업성취도 자율평가 최종 안내', hasAttachment: true, date: '2025-06-12', views: 198, thumbnail: '/src/images/sub/bbs_thumb_01.png' }
   ];
 
   const totalItems = 74;
@@ -56,39 +78,30 @@ const NoticePage: React.FC = () => {
     navigate(`/notice/view/${id}`);
   };
 
+  // 뷰 모드 변경 함수
+  const toggleViewMode = () => {
+    setViewMode(viewMode === 'list' ? 'gallery' : 'list');
+  };
+
   return (
     <div className="sub-page">
       {/* 상단 비주얼 이미지 */}
-      <div className="visual-section">
-        <div className="visual-content">
-          <div className="visual-content-text">
-            <h1>소통하기</h1>
-            <ul className="bread-crumb">
-              <li className="bread-crumb-home"><a href="/"><span>HOME</span></a></li>
-              <li><span>소통하기</span></li>
-              <li className="bread-crumb-active"><a href="/">공지사항</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <SubVisual 
+        title={visualData.title}
+        breadcrumbs={visualData.breadcrumbs}
+      />
 
       <div className="sub-content">
         {/* 왼쪽 사이드바 */}
-        <div className="sub-sidebar">
-          <div className="sub-sidebar-inner">
-            <h3>소통하기</h3>
-            <ul>
-              <li><a href="#news" className="sidebar-link active">공지사항</a></li>
-              <li><a href="#data" className="sidebar-link">FAQ</a></li>
-              <li><a href="#statistics" className="sidebar-link">문의하기</a></li>
-            </ul>
-          </div>
-        </div>
+        <SubLeftMenu 
+          title="보도자료"
+          menuItems={sidebarMenuItems}
+        />
 
         {/* 오른쪽 메인 컨텐츠 */}
         <div className="sub-content-wrap">
           <div className="sub-content-header">
-            <h2>공지사항</h2>
+            <h2>보도자료</h2>
 
             {/* <button onClick={handleWriteClick} className="write-button">
               글쓰기
@@ -118,45 +131,95 @@ const NoticePage: React.FC = () => {
                   />
                 </label>
                 <button onClick={handleSearch} className="search-button">검색</button>
+                {/* 현재 모드에 따라 다른 버튼 표시 */}
+                {viewMode === 'list' ? (
+                  <button onClick={toggleViewMode} className="gal-view-mode-btn">
+                    <img src="/src/images/common/bbs_gal_btn.svg" alt="갤러리 보기" />
+                  </button>
+                ) : (
+                  <button onClick={toggleViewMode} className="list-view-mode-btn">
+                    <img src="/src/images/common/bbs_list_btn.svg" alt="리스트 보기" />
+                  </button>
+                )}
               </div>
             </div>
 
             {/* 공지사항 테이블 */}
+            <div className="view-mode-wrap">
+              {/* 갤러리 모드 */}
+              {viewMode === 'gallery' && (
+                <div className="gallery-mode">
+                  <div className="gallery-mode-inner">
+                    <div className="gallery-grid">
+                      {notices.map((notice) => (
+                        <div key={notice.id} className="gallery-item"
+                          onClick={() => handleTitleClick(notice.id)}>
+                          <div className="gallery-item-content">
+                            {/* 썸네일 이미지 */}
+                            {notice.thumbnail && (
+                              <div className="gallery-thumbnail">
+                                <img src={notice.thumbnail} alt="썸네일" />
+                              </div>
+                            )}
+                            <div className="gallery-txt-info">
+                              <h3 className="gallery-title">{notice.title}</h3>
+                              <div className="gallery-meta">
+                                <span className="gallery-date">{notice.date}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
 
-            <div className="notice-table-container">
-              <table className="notice-table">
-                <thead>
-                  <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>첨부</th>
-                    <th>작성일</th>
-                    <th>조회수</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {notices.map((notice) => (
-                    <tr key={notice.id}>
-                      <td>{notice.id}</td>
-                      <td className="title-cell">
-                        <button
-                          onClick={() => handleTitleClick(notice.id)}
-                          className="title-button"
-                        >
-                          {notice.title}
-                        </button>
-                      </td>
-                      <td>
-                        {notice.hasAttachment && (
-                          <span className="attachment-icon"><img src="/src/images/icons/icon_file-att.svg" alt="첨부파일" /></span>
-                        )}
-                      </td>
-                      <td>{notice.date}</td>
-                      <td>{notice.views}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              {/* 리스트 모드 */}
+              {viewMode === 'list' && (
+                <div className="list-mode notice-table-container">
+                  <table className="notice-table">
+                    <colgroup>
+                      <col style={{ width: "5%" }} />
+                      <col style={{ width: "40%" }} />
+                      <col style={{ width: "5%" }} />
+                      <col style={{ width: "10%" }} />
+                      <col style={{ width: "10%" }} />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>첨부</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {notices.map((notice) => (
+                        <tr key={notice.id}>
+                          <td>{notice.id}</td>
+                          <td className="title-cell">
+                            <button
+                              onClick={() => handleTitleClick(notice.id)}
+                              className="title-button"
+                            >
+                              {notice.title}
+                            </button>
+                          </td>
+                          <td>
+                            {notice.hasAttachment && (
+                              <span className="attachment-icon"><img src="/src/images/icons/icon_file-att.svg" alt="첨부파일" /></span>
+                            )}
+                          </td>
+                          <td>{notice.date}</td>
+                          <td>{notice.views}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </div>
 
             {/* 페이지네이션 */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import SubVisual from '../SubVisual';
 import './NoticeView.css';
 
 interface NoticeDetail {
@@ -16,6 +17,16 @@ interface NoticeDetail {
 const NoticeView: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+
+  // 비주얼 섹션 데이터
+  const visualData = {
+    title: '정보마당',
+    breadcrumbs: [
+      { label: 'HOME', href: '/', isHome: true },
+      { label: '정보마당' },
+      { label: '보도자료', isActive: true }
+    ]
+  };
 
   // 샘플 데이터 (실제로는 API에서 가져올 데이터)
   const noticeDetail: NoticeDetail = {
@@ -84,16 +95,14 @@ const NoticeView: React.FC = () => {
   };
 
   return (
-    <div className="notice-view">
+    <div className="sub-page">
       {/* 상단 비주얼 이미지 */}
-      <div className="visual-section">
-        <div className="visual-content">
-          <h1>공지사항</h1>
-          <p>학업성취도평가와 관련된 공지사항을 확인하세요</p>
-        </div>
-      </div>
+      <SubVisual 
+        title={visualData.title}
+        breadcrumbs={visualData.breadcrumbs}
+      />
 
-      <div className="notice-view-content">
+      <div className="bbs-view-content">
         {/* 공지사항 상세 내용 */}
         <div className="notice-detail">
           <div className="notice-header">

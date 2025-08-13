@@ -1,0 +1,90 @@
+/* 상단 비주얼 이미지 */
+.visual-section {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.visual-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10rem;
+  box-sizing: border-box;
+}
+
+.visual-content .visual-content-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: #fff;
+  gap: 1rem;
+}
+
+.visual-content-text h1 {
+  line-height: 6.4rem;
+  font-size: 4.8rem;
+  font-weight: 800;
+}
+
+.bread-crumb {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bread-crumb li {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.bread-crumb li:before {
+  content: "";
+  display: inline-block;
+  width: .4rem;
+  height: .4rem;
+  background-color: #fff;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 0 1.2rem;
+}
+
+.bread-crumb li:first-child:before {
+  display: none;
+}
+
+.bread-crumb-home a {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  background-image: url('/src/images/icons/icon_bc_home.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bread-crumb-home span {
+  display: none;
+}
+
+.bread-crumb-active a {
+  color: #fff;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .visual-content-text h1 {
+    font-size: 2.5rem;
+  }
+}

@@ -9,14 +9,14 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <div className="footer-logos">
               <div className="logo-item">
-                <span className="logo-text">교육부</span>
+                <img src="/src/images/common/footer-logo_edu.svg" alt="교육부 로고" />
               </div>
               <div className="logo-item">
-                <span className="logo-text">KICE</span>
+                <img src="/src/images/common/footer-logo_kice.svg" alt="KICE 로고" />
               </div>
             </div>
             <div className="footer-info">
-              <p>학업성취도평가지원포털 (27873) 충청북도 진천군 덕산읍 교학로 8 한국교육과정평가원</p>
+              <p><strong>학업성취도평가지원포털</strong> (27873) 충청북도 진천군 덕산읍 교학로 8 한국교육과정평가원</p>
             </div>
           </div>
           
@@ -30,11 +30,11 @@ const Footer: React.FC = () => {
                 <option value="edunet">에듀넷</option>
               </select>
             </div>
+          </div>
+        </div>
             <div className="copyright">
               <p>&copy; 2025 by KICE. All rights reserved.</p>
             </div>
-          </div>
-        </div>
       </div>
     </footer>
   );

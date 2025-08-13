@@ -13,7 +13,7 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header-inner">
         <div className="logo">
-          <h1><img src="/src/images/common/inaea_top_logo.svg" alt="Inaea" /></h1>
+          <a href="/"><h1><img src="/src/images/common/inaea_top_logo.svg" alt="Inaea" /></h1></a>
         </div>
         <nav className="navigation">
           <ul className="nav-gnb">
