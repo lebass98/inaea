@@ -9,13 +9,14 @@ interface SubLeftMenuProps {
     href: string;
     isActive?: boolean;
   }[];
+  backgroundImage?: string;
 }
 
-const SubLeftMenu: React.FC<SubLeftMenuProps> = ({ title, menuItems }) => {
+const SubLeftMenu: React.FC<SubLeftMenuProps> = ({ title, menuItems, backgroundImage = '/images/sub/sub_side_bg.svg' }) => {
   return (
     <div className="sub-sidebar">
       <div className="sub-sidebar-inner">
-        <h3>{title}</h3>
+        <h3 style={{ backgroundImage: `url(${backgroundImage})` }}>{title}</h3>
         <ul>
           {menuItems.map((item) => (
             <li key={item.id}>

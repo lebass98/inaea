@@ -112,6 +112,7 @@ const InfoCenterView: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
+        backgroundImage="/images/sub/sub_visual_4_2.svg"
       />
 
       <div className="sub-content">
@@ -119,6 +120,7 @@ const InfoCenterView: React.FC = () => {
         <SubLeftMenu
           title="소통하기"
           menuItems={sidebarMenuItems}
+          backgroundImage="/images/sub/sub_side_bg_4.svg"
         />
 
         {/* 오른쪽 메인 컨텐츠 */}

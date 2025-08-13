@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SubVisual from '../SubVisual';
 import './NoticeWrite.css';
 
 const NoticeWrite: React.FC = () => {
@@ -63,12 +64,15 @@ const NoticeWrite: React.FC = () => {
   return (
     <div className="notice-write">
       {/* 상단 비주얼 이미지 */}
-      <div className="visual-section">
-        <div className="visual-content">
-          <h1>공지사항 작성</h1>
-          <p>새로운 공지사항을 작성하세요</p>
-        </div>
-      </div>
+      <SubVisual 
+        title="공지사항 작성"
+        breadcrumbs={[
+          { label: 'HOME', href: '/', isHome: true },
+          { label: '정보마당' },
+          { label: '글쓰기', isActive: true }
+        ]}
+        backgroundImage="/images/sub/sub_visual_4_1.svg"
+      />
 
       <div className="notice-write-content">
         <form onSubmit={handleSubmit} className="write-form">

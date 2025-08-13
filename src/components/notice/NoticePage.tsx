@@ -114,6 +114,7 @@ const NoticePage: React.FC = () => {
       <SubVisual 
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
+        backgroundImage="/images/sub/sub_visual_4_1.svg"
       />
 
       <div className="sub-content">
@@ -121,6 +122,7 @@ const NoticePage: React.FC = () => {
         <SubLeftMenu 
           title="보도자료"
           menuItems={sidebarMenuItems}
+          backgroundImage="/images/sub/sub_side_bg.svg"
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
