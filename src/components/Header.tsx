@@ -9,6 +9,11 @@ const Header: React.FC = () => {
     navigate('/notice');
   };
 
+  const handleContactClick = () => {
+    navigate('/infocenter');
+  };
+
+
   return (
     <header className="header">
       <div className="header-inner">
@@ -20,7 +25,7 @@ const Header: React.FC = () => {
             <li><a href="#home">평가소개</a></li>
             <li><a href="#about">체험하기</a></li>
             <li><a href="#services" onClick={handleInfoClick}>정보마당</a></li>
-            <li><a href="#contact">소통하기</a></li>
+            <li><a href="#contact" onClick={handleContactClick}>소통하기</a></li>
             <li><a href="#contact">마이페이지</a></li>
           </ul>
         </nav>
