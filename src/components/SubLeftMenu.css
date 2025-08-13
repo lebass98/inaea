@@ -1,6 +1,6 @@
 /* 왼쪽 사이드바 */
 .sub-sidebar {
-  width: 28rem;
+  min-width: 28rem;
   background: #f8f9fa;
   border-radius: 10px;
 }
