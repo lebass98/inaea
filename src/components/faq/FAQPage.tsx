@@ -151,7 +151,28 @@ const FAQPage: React.FC = () => {
 
           {/* 검색 영역 */}
           <div className="sub-content-main">
-            <div className="search-tab-wrap">
+            {/* 탭 메뉴 */}
+            <div className="tab-menu">
+              <ul>
+                <li
+                  className={activeTab === 'all' ? 'active' : ''}
+                  onClick={() => handleTabClick('all')}
+                >
+                  전체
+                </li>
+                <li
+                  className={activeTab === 'evaluation' ? 'active' : ''}
+                  onClick={() => handleTabClick('evaluation')}
+                >
+                  표집평가
+                </li>
+                <li
+                  className={activeTab === 'system' ? 'active' : ''}
+                  onClick={() => handleTabClick('system')}
+                >
+                  자율평가
+                </li>
+              </ul>
             </div>
             <div className="search-section">
               <span className="total-count">총 <strong>{totalFilteredItems}</strong>건</span>
@@ -177,29 +198,6 @@ const FAQPage: React.FC = () => {
               </div>
             </div>
 
-            {/* 탭 메뉴 */}
-            <div className="tab-menu">
-              <ul>
-                <li 
-                  className={activeTab === 'all' ? 'active' : ''}
-                  onClick={() => handleTabClick('all')}
-                >
-                  전체
-                </li>
-                <li 
-                  className={activeTab === 'evaluation' ? 'active' : ''}
-                  onClick={() => handleTabClick('evaluation')}
-                >
-                  표집평가
-                </li>
-                <li 
-                  className={activeTab === 'system' ? 'active' : ''}
-                  onClick={() => handleTabClick('system')}
-                >
-                  자율평가
-                </li>
-              </ul>
-            </div>
 
             {/* FAQ 테이블 */}
             <div className="view-mode-wrap">

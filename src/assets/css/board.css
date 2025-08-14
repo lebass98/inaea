@@ -13,6 +13,7 @@
 
 .sub-content-wrap {
   max-width: calc(144rem - 32rem);
+  flex: 1;
 }
 
 /* 오른쪽 메인 컨텐츠 */
@@ -104,31 +105,40 @@
 }
 
 .tab-menu ul {
-  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  border-bottom: 2px solid #E5E5E5;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 50rem;
 }
 
 .tab-menu li {
-  padding: 1.2rem 2.4rem;
   cursor: pointer;
-  border-bottom: 3px solid transparent;
   font-size: 1.6rem;
-  font-weight: 500;
-  color: #666;
+  font-weight: 400;
+  color: #111;
   transition: all 0.3s ease;
+  height: 5.6rem;
+  line-height: 5.6rem;
+  padding: 0 5rem;
+  border-radius: 20rem;
+  display: inline-block;
+  margin-left:1rem;
+}
+.tab-menu li:first-child {
+  margin-left:0;
 }
 
 .tab-menu li:hover {
-  color: #004870;
-  background-color: #F8F9FA;
+  background-color: #448CE3;
+  color: #fff;
 }
 
 .tab-menu li.active {
-  color: #004870;
-  border-bottom-color: #004870;
+  background-color: #448CE3;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -227,7 +237,7 @@
 
 .gallery-thumbnail img {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -766,23 +776,26 @@ span.system {
   font-size: 1.8rem;
   font-weight: 400;
   color: #111;
-  display:inline-block;
-  width:10rem;
-  text-align:center;
+  display: inline-block;
+  width: 10rem;
+  text-align: center;
 }
+
 .bbs-view-post-nav a {
-  color:#637381;
-  font-size:1.8rem;
-  font-weight:400;
+  color: #637381;
+  font-size: 1.8rem;
+  font-weight: 400;
 }
 
 .prev-next-post {
   display: flex;
   flex-direction: column;
 }
+
 .prev-next-post .prev-post {
   border-bottom: 1px dotted rgba(145, 158, 171, 0.20);
 }
+
 .prev-next-post .prev-post,
 .prev-next-post .next-post {
   display: flex;

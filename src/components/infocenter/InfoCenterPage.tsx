@@ -150,17 +150,6 @@ const InfoCenterPage: React.FC = () => {
               <span className="total-count">총 <strong>{totalItems}</strong>건</span>
               <div className="search-type-wrap">
                 <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="search-type"
-                >
-                  {categories.map(category => (
-                    <option key={category.value} value={category.value}>
-                      {category.label}
-                    </option>
-                  ))}
-                </select>
-                <select
                   value={searchType}
                   onChange={(e) => setSearchType(e.target.value)}
                   className="search-type"
@@ -186,17 +175,15 @@ const InfoCenterPage: React.FC = () => {
               <div className="list-mode notice-table-container">
                 <table className="notice-table">
                   <colgroup>
-                    <col style={{ width: "5%" }} />
-                    <col style={{ width: "10%" }} />
-                    <col style={{ width: "35%" }} />
-                    <col style={{ width: "5%" }} />
+                    <col style={{ width: "8%" }} />
+                    <col style={{ width: "50%" }} />
+                    <col style={{ width: "8%" }} />
                     <col style={{ width: "10%" }} />
                     <col style={{ width: "10%" }} />
                   </colgroup>
                   <thead>
                     <tr>
                       <th>번호</th>
-                      <th>카테고리</th>
                       <th>제목</th>
                       <th>첨부</th>
                       <th>작성일</th>
@@ -207,7 +194,6 @@ const InfoCenterPage: React.FC = () => {
                     {currentPageData.map((item) => (
                       <tr key={item.id}>
                         <td>{item.id}</td>
-                        <td>{categories.find(cat => cat.value === item.category)?.label}</td>
                         <td className="title-cell">
                           <button
                             onClick={() => handleTitleClick(item.id)}
