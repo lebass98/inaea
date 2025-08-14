@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
-import './NoticePage.css';
+import '../../assets/css/board.css';
 
 interface NoticeItem {
   id: number;
@@ -18,22 +18,20 @@ const NoticePage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchType, setSearchType] = useState('title_content');
   const [searchKeyword, setSearchKeyword] = useState('');
-  const [viewMode, setViewMode] = useState<'list' | 'gallery'>('list'); // 뷰 모드 상태 추가
-
+  
   // 사이드바 메뉴 데이터
   const sidebarMenuItems = [
-    { id: 'news', label: '보도자료', href: '#news', isActive: true },
+    { id: 'news', label: '공지사항', href: '#news', isActive: true },
     { id: 'data', label: 'FAQ', href: '#data', isActive: false },
-    { id: 'statistics', label: '보도자료', href: '#statistics', isActive: false }
+    { id: 'statistics', label: '문의하기', href: '#statistics', isActive: false }
   ];
-
   // 비주얼 섹션 데이터
   const visualData = {
-    title: '정보마당',
+    title: '소통하기',
     breadcrumbs: [
       { label: 'HOME', href: '/', isHome: true },
-      { label: '정보마당' },
-      { label: '보도자료', isActive: true }
+      { label: '소통하기' },
+      { label: '공지사항', isActive: true }
     ]
   };
 
@@ -103,32 +101,28 @@ const NoticePage: React.FC = () => {
     navigate(`/notice/view/${id}`);
   };
 
-  // 뷰 모드 변경 함수
-  const toggleViewMode = () => {
-    setViewMode(viewMode === 'list' ? 'gallery' : 'list');
-  };
 
   return (
     <div className="sub-page">
       {/* 상단 비주얼 이미지 */}
-      <SubVisual 
+      <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_4_1.svg"
+        backgroundImage="/images/sub/sub_visual_4.svg"
       />
 
       <div className="sub-content">
         {/* 왼쪽 사이드바 */}
-        <SubLeftMenu 
-          title="보도자료"
+        <SubLeftMenu
+          title="소통하기"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg.svg"
+          backgroundImage="/images/sub/sub_side_bg_4.svg"
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
         <div className="sub-content-wrap">
           <div className="sub-content-header">
-            <h2>보도자료</h2>
+            <h2>공지사항</h2>
 
             {/* <button onClick={handleWriteClick} className="write-button">
               글쓰기
@@ -158,100 +152,58 @@ const NoticePage: React.FC = () => {
                   />
                 </label>
                 <button onClick={handleSearch} className="search-button">검색</button>
-                {/* 현재 모드에 따라 다른 버튼 표시 */}
-                {viewMode === 'list' ? (
-                  <button onClick={toggleViewMode} className="gal-view-mode-btn">
-                    <img src="/images/common/bbs_gal_btn.svg" alt="갤러리 보기" />
-                  </button>
-                ) : (
-                  <button onClick={toggleViewMode} className="list-view-mode-btn">
-                    <img src="/images/common/bbs_list_btn.svg" alt="리스트 보기" />
-                  </button>
-                )}
               </div>
             </div>
 
             {/* 공지사항 테이블 */}
             <div className="view-mode-wrap">
-              {/* 갤러리 모드 */}
-              {viewMode === 'gallery' && (
-                <div className="gallery-mode">
-                  <div className="gallery-mode-inner">
-                    <div className="gallery-grid">
-                      {currentPageData.map((notice) => (
-                        <div key={notice.id} className="gallery-item"
-                          onClick={() => handleTitleClick(notice.id)}>
-                          <div className="gallery-item-content">
-                            {/* 썸네일 이미지 */}
-                            {notice.thumbnail && (
-                              <div className="gallery-thumbnail">
-                                <img src={notice.thumbnail} alt="썸네일" />
-                              </div>
-                            )}
-                            <div className="gallery-txt-info">
-                              <h3 className="gallery-title">{notice.title}</h3>
-                              <div className="gallery-meta">
-                                <span className="gallery-date">{notice.date}</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* 리스트 모드 */}
-              {viewMode === 'list' && (
-                <div className="list-mode notice-table-container">
-                  <table className="notice-table">
-                    <colgroup>
-                      <col style={{ width: "5%" }} />
-                      <col style={{ width: "40%" }} />
-                      <col style={{ width: "5%" }} />
-                      <col style={{ width: "10%" }} />
-                      <col style={{ width: "10%" }} />
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>번호</th>
-                        <th>제목</th>
-                        <th>첨부</th>
-                        <th>작성일</th>
-                        <th>조회수</th>
+              <div className="list-mode notice-table-container">
+                <table className="notice-table">
+                  <colgroup>
+                    <col style={{ width: "5%" }} />
+                    <col style={{ width: "40%" }} />
+                    <col style={{ width: "5%" }} />
+                    <col style={{ width: "10%" }} />
+                    <col style={{ width: "10%" }} />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>번호</th>
+                      <th>제목</th>
+                      <th>첨부</th>
+                      <th>작성일</th>
+                      <th>조회수</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {currentPageData.map((notice) => (
+                      <tr key={notice.id}>
+                        <td>{notice.id}</td>
+                        <td className="title-cell">
+                          <button
+                            onClick={() => handleTitleClick(notice.id)}
+                            className="title-button"
+                          >
+                            {notice.title}
+                          </button>
+                        </td>
+                        <td>
+                          {notice.hasAttachment && (
+                            <span className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></span>
+                          )}
+                        </td>
+                        <td>{notice.date}</td>
+                        <td>{notice.views}</td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {currentPageData.map((notice) => (
-                        <tr key={notice.id}>
-                          <td>{notice.id}</td>
-                          <td className="title-cell">
-                            <button
-                              onClick={() => handleTitleClick(notice.id)}
-                              className="title-button"
-                            >
-                              {notice.title}
-                            </button>
-                          </td>
-                          <td>
-                            {notice.hasAttachment && (
-                              <span className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></span>
-                            )}
-                          </td>
-                          <td>{notice.date}</td>
-                          <td>{notice.views}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             {/* 페이지네이션 */}
             <div className="pagination">
-              <button 
+              <button
                 className={`page-button prev ${currentPage === 1 ? 'disabled' : ''}`}
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
@@ -267,7 +219,7 @@ const NoticePage: React.FC = () => {
                   {page}
                 </button>
               ))}
-              <button 
+              <button
                 className={`page-button next ${currentPage === totalPages ? 'disabled' : ''}`}
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}

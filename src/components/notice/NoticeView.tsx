@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
-import './NoticeView.css';
+import '../../assets/css/board.css';
 
 interface NoticeDetail {
   id: number;
@@ -21,19 +21,19 @@ const NoticeView: React.FC = () => {
 
   // 비주얼 섹션 데이터
   const visualData = {
-    title: '정보마당',
+    title: '소통하기',
     breadcrumbs: [
       { label: 'HOME', href: '/', isHome: true },
-      { label: '정보마당' },
-      { label: '보도자료', isActive: true }
+      { label: '소통하기' },
+      { label: '공지사항', isActive: true }
     ]
   };
 
   // 사이드바 메뉴 데이터
   const sidebarMenuItems = [
-    { id: 'news', label: '보도자료', href: '#news', isActive: true },
+    { id: 'news', label: '공지사항', href: '#news', isActive: true },
     { id: 'data', label: 'FAQ', href: '#data', isActive: false },
-    { id: 'statistics', label: '보도자료', href: '#statistics', isActive: false }
+    { id: 'statistics', label: '문의하기', href: '#statistics', isActive: false }
   ];
 
   // 샘플 데이터 (실제로는 API에서 가져올 데이터)
@@ -112,21 +112,21 @@ const NoticeView: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_4_1.svg"
+        backgroundImage="/images/sub/sub_visual_4.svg"
       />
 
       <div className="sub-content">
         {/* 왼쪽 사이드바 */}
         <SubLeftMenu
-          title="보도자료"
+          title="소통하기"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg.svg"
+          backgroundImage="/images/sub/sub_side_bg_4.svg"
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
         <div className="sub-content-wrap">
           <div className="sub-content-header">
-            <h2>보도자료</h2>
+            <h2>공지사항</h2>
 
             {/* <button onClick={handleWriteClick} className="write-button">
               글쓰기

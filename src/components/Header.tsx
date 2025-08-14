@@ -4,16 +4,12 @@ import './Header.css';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
-
   const handleInfoClick = () => {
-    navigate('/notice');
-  };
-
-  const handleContactClick = () => {
     navigate('/infocenter');
   };
-
-
+  const handleContactClick = () => {
+    navigate('/notice');
+  };
   return (
     <header className="header">
       <div className="header-inner">
@@ -55,7 +51,7 @@ const Header: React.FC = () => {
               <a href="#"><img src="/images/icons/icon_header_alram.svg" alt="알림" /><em>1</em></a>
             </li>
             <li>
-                              <a href="#"><img src="/images/icons/icon_header_ham.svg" alt="알림" /></a>
+              <a href="#"><img src="/images/icons/icon_header_ham.svg" alt="알림" /></a>
             </li>
           </ul>
         </div>

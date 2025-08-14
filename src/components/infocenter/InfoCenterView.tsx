@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
-import './InfoCenterView.css';
+import '../../assets/css/board.css';
 
 interface InfoCenterDetail {
   id: number;
@@ -21,10 +21,10 @@ const InfoCenterView: React.FC = () => {
 
   // 비주얼 섹션 데이터
   const visualData = {
-    title: '소통하기',
+    title: '정보마당',
     breadcrumbs: [
       { label: 'HOME', href: '/', isHome: true },
-      { label: '소통하기' },
+      { label: '정보마당' },
       { label: '보도자료', isActive: true }
     ]
   };
@@ -32,8 +32,9 @@ const InfoCenterView: React.FC = () => {
   // 사이드바 메뉴 데이터
   const sidebarMenuItems = [
     { id: 'news', label: '보도자료', href: '#news', isActive: true },
-    { id: 'data', label: 'FAQ', href: '#data', isActive: false },
-    { id: 'statistics', label: '보도자료', href: '#statistics', isActive: false }
+    { id: 'data', label: '연구자료', href: '#data', isActive: false },
+    { id: 'statistics', label: '설문자료', href: '#statistics', isActive: false },
+    { id: 'statistics', label: '홍보자료', href: '#statistics2', isActive: false }
   ];
 
   // 샘플 데이터 (실제로는 API에서 가져올 데이터)
@@ -112,21 +113,21 @@ const InfoCenterView: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_4_2.svg"
+        backgroundImage="/images/sub/sub_visual_3.svg"
       />
 
       <div className="sub-content">
         {/* 왼쪽 사이드바 */}
         <SubLeftMenu
-          title="소통하기"
+          title="정보마당"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg_4.svg"
+          backgroundImage="/images/sub/sub_side_bg_3.svg"
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
         <div className="sub-content-wrap">
           <div className="sub-content-header">
-            <h2>소통하기</h2>
+            <h2>보도자료</h2>
 
             {/* <button onClick={handleWriteClick} className="write-button">
               글쓰기

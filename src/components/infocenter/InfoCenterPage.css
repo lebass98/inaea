@@ -12,7 +12,7 @@
 }
 
 .sub-content-wrap {
-  flex: 1;
+  max-width: calc(144rem - 32rem);
 }
 
 /* 오른쪽 메인 컨텐츠 */
