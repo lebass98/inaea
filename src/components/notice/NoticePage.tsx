@@ -21,9 +21,9 @@ const NoticePage: React.FC = () => {
   
   // 사이드바 메뉴 데이터
   const sidebarMenuItems = [
-    { id: 'news', label: '공지사항', href: '#news', isActive: true },
-    { id: 'data', label: 'FAQ', href: '#data', isActive: false },
-    { id: 'statistics', label: '문의하기', href: '#statistics', isActive: false }
+    { id: 'news', label: '공지사항', href: '#news', isActive: true, path: '/notice' },
+    { id: 'data', label: 'FAQ', href: '#data', isActive: false, path: '/faq' },
+    { id: 'statistics', label: '문의하기', href: '#statistics', isActive: false, path: '/contact' }
   ];
   // 비주얼 섹션 데이터
   const visualData = {

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Header from './components/Header'
 import MainContainer from './components/MainContainer'
 import { NoticePage, NoticeView, NoticeWrite } from './components/notice'
+import { FAQPage, FAQView, FAQWrite } from './components/faq'
 import { InfoCenterPage, InfoCenterView, InfoCenterWrite } from './components/InfoCenter'
 import Footer from './components/Footer'
 import './App.css'
@@ -17,6 +18,9 @@ function App() {
           <Route path="/notice" element={<NoticePage />} />
           <Route path="/notice/view/:id" element={<NoticeView />} />
           <Route path="/notice/write" element={<NoticeWrite />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/faq/view/:id" element={<FAQView />} />
+          <Route path="/faq/write" element={<FAQWrite />} />
           <Route path="/infocenter" element={<InfoCenterPage />} />
           <Route path="/infocenter/view/:id" element={<InfoCenterView />} />
           <Route path="/infocenter/write" element={<InfoCenterWrite />} />

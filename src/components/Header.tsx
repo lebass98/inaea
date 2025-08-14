@@ -4,9 +4,11 @@ import './Header.css';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  
   const handleInfoClick = () => {
     navigate('/infocenter');
   };
+  
   const handleContactClick = () => {
     navigate('/notice');
   };
