@@ -144,9 +144,9 @@ const InfoCenterPage: React.FC = () => {
         <div className="sub-content-wrap">
           <div className="sub-content-header">
             <h2>보도자료</h2>
-            <button onClick={handleWriteClick} className="write-button">
+            {/* <button onClick={handleWriteClick} className="write-button">
               글쓰기
-            </button>
+            </button> */}
           </div>
 
           {/* 검색 영역 */}

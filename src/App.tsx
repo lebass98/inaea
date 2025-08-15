@@ -4,7 +4,8 @@ import Header from './components/Header'
 import MainContainer from './components/MainContainer'
 import { NoticePage, NoticeView, NoticeWrite } from './components/notice'
 import { FAQPage, FAQView, FAQWrite } from './components/faq'
-import { InfoCenterPage, InfoCenterView, InfoCenterWrite } from './components/InfoCenter'
+import { InfoCenterPage, InfoCenterView, InfoCenterWrite } from './components/infocenter'
+import { ResearchPage, ResearchView } from './components/research'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -24,6 +25,8 @@ function App() {
           <Route path="/infocenter" element={<InfoCenterPage />} />
           <Route path="/infocenter/view/:id" element={<InfoCenterView />} />
           <Route path="/infocenter/write" element={<InfoCenterWrite />} />
+          <Route path="/research" element={<ResearchPage />} />
+          <Route path="/research/view/:id" element={<ResearchView />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
