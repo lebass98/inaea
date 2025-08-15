@@ -20,6 +20,7 @@ const InfoCenterPage: React.FC = () => {
   const [searchType, setSearchType] = useState('title_content');
   const [searchKeyword, setSearchKeyword] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [viewMode, setViewMode] = useState<'list' | 'gallery'>('list'); // 뷰 모드 상태 추가
   
   // 사이드바 메뉴 데이터
   const sidebarMenuItems = [
@@ -114,6 +115,10 @@ const InfoCenterPage: React.FC = () => {
     navigate(`/infocenter/view/${id}`);
   };
 
+  // 뷰 모드 변경 함수
+  const toggleViewMode = () => {
+    setViewMode(viewMode === 'list' ? 'gallery' : 'list');
+  };
   const handleWriteClick = () => {
     navigate('/infocenter/write');
   };
@@ -167,11 +172,51 @@ const InfoCenterPage: React.FC = () => {
                   />
                 </label>
                 <button onClick={handleSearch} className="search-button">검색</button>
+                {/* 현재 모드에 따라 다른 버튼 표시 */}
+                {viewMode === 'list' ? (
+                  <button onClick={toggleViewMode} className="gal-view-mode-btn">
+                    <img src="/images/common/bbs_gal_btn.svg" alt="갤러리 보기" />
+                  </button>
+                ) : (
+                  <button onClick={toggleViewMode} className="list-view-mode-btn">
+                    <img src="/images/common/bbs_list_btn.svg" alt="리스트 보기" />
+                  </button>
+                )}
               </div>
             </div>
 
             {/* 정보마당 테이블 */}
             <div className="view-mode-wrap">
+                  {/* 갤러리 모드 */}
+                  {viewMode === 'gallery' && (
+                <div className="gallery-mode">
+                  <div className="gallery-mode-inner">
+                    <div className="gallery-grid">
+                      {currentPageData.map((notice) => (
+                        <div key={notice.id} className="gallery-item"
+                          onClick={() => handleTitleClick(notice.id)}>
+                          <div className="gallery-item-content">
+                            {/* 썸네일 이미지 */}
+                            {notice.thumbnail && (
+                              <div className="gallery-thumbnail">
+                                <img src={notice.thumbnail} alt="썸네일" />
+                              </div>
+                            )}
+                            <div className="gallery-txt-info">
+                              <h3 className="gallery-title">{notice.title}</h3>
+                              <div className="gallery-meta">
+                                <span className="gallery-date">{notice.date}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+              {/* 리스트 모드 */}
+              {viewMode === 'list' && (
               <div className="list-mode notice-table-container">
                 <table className="notice-table">
                   <colgroup>
@@ -214,6 +259,7 @@ const InfoCenterPage: React.FC = () => {
                   </tbody>
                 </table>
               </div>
+              )}
             </div>
 
             {/* 페이지네이션 */}
