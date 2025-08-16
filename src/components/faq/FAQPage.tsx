@@ -25,7 +25,7 @@ const FAQPage: React.FC = () => {
   const sidebarMenuItems = [
     { id: 'news', label: '공지사항', href: '#news', isActive: false, path: '/notice' },
     { id: 'data', label: 'FAQ', href: '#data', isActive: true, path: '/faq' },
-    { id: 'statistics', label: '문의하기', href: '#statistics', isActive: false, path: '/contact' }
+    { id: 'statistics', label: '문의하기', href: '#inquiry', isActive: false, path: '/inquiry' }
   ];
 
   // 비주얼 섹션 데이터

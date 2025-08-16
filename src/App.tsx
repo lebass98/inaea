@@ -6,6 +6,9 @@ import { NoticePage, NoticeView, NoticeWrite } from './components/notice'
 import { FAQPage, FAQView, FAQWrite } from './components/faq'
 import { InfoCenterPage, InfoCenterView, InfoCenterWrite } from './components/infocenter'
 import { ResearchPage, ResearchView } from './components/research'
+import { SurveyPage, SurveyView } from './components/survey'
+import { PromotionPage, PromotionView } from './components/promotion'
+import { InquiryPage } from './components/inquiry'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -27,6 +30,11 @@ function App() {
           <Route path="/infocenter/write" element={<InfoCenterWrite />} />
           <Route path="/research" element={<ResearchPage />} />
           <Route path="/research/view/:id" element={<ResearchView />} />
+          <Route path="/survey" element={<SurveyPage />} />
+          <Route path="/survey/view/:id" element={<SurveyView />} />
+          <Route path="/promotion" element={<PromotionPage />} />
+          <Route path="/promotion/view/:id" element={<PromotionView />} />
+          <Route path="/inquiry" element={<InquiryPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />

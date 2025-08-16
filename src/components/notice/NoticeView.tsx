@@ -33,7 +33,7 @@ const NoticeView: React.FC = () => {
   const sidebarMenuItems = [
     { id: 'news', label: '공지사항', href: '#news', isActive: true, path: '/notice' },
     { id: 'data', label: 'FAQ', href: '#data', isActive: false, path: '/faq' },
-    { id: 'statistics', label: '문의하기', href: '#statistics', isActive: false, path: '/contact' }
+    { id: 'statistics', label: '문의하기', href: '#inquiry', isActive: false, path: '/inquiry' }
   ];
 
   // 샘플 데이터 (실제로는 API에서 가져올 데이터)

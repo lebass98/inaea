@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url('/src/assets/css/components.css');
+@import url('/src/assets/css/common.css');
 
 @font-face {
   font-family: 'Pretendard GOV';
@@ -132,6 +133,9 @@ select {
   background-size: 1.6rem;
   box-sizing: border-box;
 }
+textarea {
+  font-family: inherit;
+}
 
 label.input {
   font-size: 1.5rem;
@@ -151,8 +155,9 @@ label.input {
 input[type="text"] {
   font-size: 1.5rem;
   color: #111;
-  border: none;
   box-sizing: border-box;
+  height: 4.8rem;
+  line-height: 4.8rem;
 }
 
 input:focus-visible {

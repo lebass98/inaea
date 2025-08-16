@@ -1,3 +1,4 @@
+
 .sub-page {
   padding: 3rem 0 10rem;
   background-color: #F6FAFF;
@@ -925,5 +926,256 @@ span.system {
 
   .action-buttons {
     justify-content: center;
+  }
+}
+
+/* 문의하기 폼 스타일 */
+.inquiry-form {
+  max-width: 100%;
+}
+
+.form-section {
+  margin-bottom: 3rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.required {
+  color: #dc3545;
+}
+
+.category-selects {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.category-select {
+  border: 1px solid #ddd;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  background-color: #fff;
+  color: #111;
+}
+
+.category-select:focus {
+  outline: none;
+  border-color: #408DED;
+  box-shadow: 0 0 0 2px rgba(64, 141, 237, 0.2);
+}
+
+.form-input {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid #ddd;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  background-color: #fff;
+  color: #111;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #408DED;
+  box-shadow: 0 0 0 2px rgba(64, 141, 237, 0.2);
+}
+
+.content-editor {
+  border: 1px solid #ddd;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.toolbar-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+  background-color: #fff;
+  margin-right: 1rem;
+}
+
+.toolbar-btn {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toolbar-btn:hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.content-textarea {
+  width: 100%;
+  padding: 2rem;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 300px;
+  box-sizing: border-box;
+}
+
+.content-textarea:focus {
+  outline: none;
+}
+
+.file-upload-area {
+  position: relative;
+  border: 2px dashed #ddd;
+  border-radius: 0.8rem;
+  padding: 2rem 3rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  transition: border-color 0.3s ease;
+}
+
+.file-upload-area:hover {
+  border-color: #408DED;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-placeholder {
+  pointer-events: none;
+}
+
+.upload-icon {
+  text-indent: -9999px;
+  background-image: url('/images/icons/icon_upload.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 4rem;
+  height: 4rem;
+  display: inline-block;
+}
+
+.upload-text {
+  font-size: 1.6rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.attached-files {
+  margin-top: 1.5rem;
+}
+
+.attached-file {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.file-icon {
+  font-size: 1.6rem;
+}
+
+.file-name {
+  flex: 1;
+  font-size: 1.4rem;
+  color: #111;
+}
+
+.file-remove {
+  cursor: pointer;
+  background:none;
+  line-height: 1;
+  border:none;
+  padding:0;
+  margin:0;
+  height:auto;  
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.6rem;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.form-notice {
+  font-size: 1.8rem;
+  color: #111;
+  font-weight: 400;
+  flex: 1;
+}
+
+.submit-btn {
+  background-color: #408DED;
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2d7dd2;
+}
+
+/* 반응형 디자인 - 문의하기 */
+@media (max-width: 768px) {
+  .category-selects {
+    flex-direction: column;
+  }
+  
+  .form-footer {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
+  
+  .editor-toolbar {
+    gap: 0.3rem;
+  }
+  
+  .toolbar-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 1.1rem;
   }
 }
