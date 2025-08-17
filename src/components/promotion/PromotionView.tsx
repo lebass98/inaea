@@ -193,12 +193,6 @@ const PromotionView: React.FC = () => {
                 </button>
               </div>
 
-
-
-
-
-
-
             </div>
           </div>
         </div>
