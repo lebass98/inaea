@@ -34,8 +34,7 @@ const SurveyView: React.FC = () => {
     breadcrumbs: [
       { label: 'HOME', href: '/', isHome: true },
       { label: '정보마당' },
-      { label: '설문자료', href: '/survey' },
-      { label: '상세보기', isActive: true }
+      { label: '설문자료', isActive: true  }
     ]
   };
 
@@ -94,10 +93,7 @@ const SurveyView: React.FC = () => {
     navigate('/survey');
   };
 
-  const handleDownloadAttachment = (filename: string) => {
-    console.log('첨부파일 다운로드:', filename);
-    // 실제로는 파일 다운로드 로직 구현
-  };
+
 
   return (
     <div className="sub-page">
@@ -105,7 +101,7 @@ const SurveyView: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_4.svg"
+        backgroundImage="/images/sub/sub_visual_3.svg"
       />
 
       <div className="sub-content">
@@ -113,7 +109,7 @@ const SurveyView: React.FC = () => {
         <SubLeftMenu
           title="정보마당"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg_4.svg"
+          backgroundImage="/images/sub/sub_side_bg_3.svg"
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
@@ -150,13 +146,13 @@ const SurveyView: React.FC = () => {
 
 
               {/* 첨부파일 */}
-              {surveyData.hasAttachment && (
-                <div className="attachments-section">
+              {surveyData.hasAttachment && surveyData.attachments && (
+                <div className="attachment-section">
                   <ul className="attachment-list">
                     {surveyData.attachments.map((file, index) => (
-                      <li>
-                        <span key={index} className="attachment-item">
-                          <em className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></em>
+                      <li key={index}>
+                        <span className="attachment-item">
+                          <em className="attachment-icon"><img src="./images/icons/icon_file-att.svg" alt="첨부파일" /></em>
                           <a href="#" className="attachment-link">{file}</a>
                         </span>
                       </li>

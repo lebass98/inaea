@@ -94,17 +94,7 @@ const NoticeView: React.FC = () => {
     navigate('/notice');
   };
 
-  const handleEdit = () => {
-    navigate(`/notice/edit/${id}`);
-  };
 
-  const handleDelete = () => {
-    if (window.confirm('정말로 이 공지사항을 삭제하시겠습니까?')) {
-      // 삭제 로직 구현
-      console.log('공지사항 삭제:', id);
-      navigate('/notice');
-    }
-  };
 
   return (
     <div className="sub-page">

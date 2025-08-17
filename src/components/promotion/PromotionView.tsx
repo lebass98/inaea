@@ -34,8 +34,7 @@ const PromotionView: React.FC = () => {
     breadcrumbs: [
       { label: 'HOME', href: '/', isHome: true },
       { label: '정보마당' },
-      { label: '홍보자료', href: '/promotion' },
-      { label: '상세보기', isActive: true }
+      { label: '홍보자료', isActive: true }
     ]
   };
 
@@ -94,10 +93,7 @@ const PromotionView: React.FC = () => {
     navigate('/promotion');
   };
 
-  const handleDownloadAttachment = (filename: string) => {
-    console.log('첨부파일 다운로드:', filename);
-    // 실제로는 파일 다운로드 로직 구현
-  };
+
 
   return (
     <div className="sub-page">
@@ -151,13 +147,13 @@ const PromotionView: React.FC = () => {
 
 
               {/* 첨부파일 */}
-              {promotionData.hasAttachment && (
+              {promotionData.hasAttachment && promotionData.attachments && (
                 <div className="attachments-section">
                   <ul className="attachment-list">
                     {promotionData.attachments.map((file, index) => (
-                      <li>
-                        <span key={index} className="attachment-item">
-                          <em className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></em>
+                      <li key={index}>
+                        <span className="attachment-item">
+                          <em className="attachment-icon"><img src="./images/icons/icon_file-att.svg" alt="첨부파일" /></em>
                           <a href="#" className="attachment-link">{file}</a>
                         </span>
                       </li>

@@ -39,7 +39,7 @@
   display: inline-block;
   width: 3.6rem;
   height: 2.2rem;
-  background-image: url('/images/common/subpage-title-dot.svg');
+  background-image: url('./images/common/subpage-title-dot.svg');
   background-size: contain;
   background-repeat: no-repeat;
   vertical-align: middle;
@@ -104,7 +104,7 @@
   margin-right: 0.8rem;
   width: 2.4rem;
   height: 2.4rem;
-  background-image: url('/images/icons/icon_input_srch.svg');
+  background-image: url('./images/icons/icon_input_srch.svg');
   background-size: 2.4rem;
   background-repeat: no-repeat;
   background-position: center;

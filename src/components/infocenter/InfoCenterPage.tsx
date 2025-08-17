@@ -19,7 +19,7 @@ const InfoCenterPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchType, setSearchType] = useState('title_content');
   const [searchKeyword, setSearchKeyword] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
+
   const [viewMode, setViewMode] = useState<'list' | 'gallery'>('list'); // 뷰 모드 상태 추가
   
   // 사이드바 메뉴 데이터
@@ -40,14 +40,7 @@ const InfoCenterPage: React.FC = () => {
     ]
   };
 
-  // 카테고리
-  const categories = [
-    { value: 'all', label: '전체' },
-    { value: 'news', label: '보도자료' },
-    { value: 'research', label: '연구자료' },
-    { value: 'survey', label: '설문자료' },
-    { value: 'promotion', label: '홍보자료' }
-  ];
+
 
   // 샘플 데이터
   const infoCenterItems: InfoCenterItem[] = [
@@ -86,7 +79,7 @@ const InfoCenterPage: React.FC = () => {
   }, [currentPage, infoCenterItems]);
 
   const handleSearch = () => {
-    console.log('검색:', searchType, searchKeyword, selectedCategory);
+    console.log('검색:', searchType, searchKeyword);
     // 검색 시 첫 페이지로 이동
     setCurrentPage(1);
   };
@@ -119,9 +112,7 @@ const InfoCenterPage: React.FC = () => {
   const toggleViewMode = () => {
     setViewMode(viewMode === 'list' ? 'gallery' : 'list');
   };
-  const handleWriteClick = () => {
-    navigate('/infocenter/write');
-  };
+
 
   return (
     <div className="sub-page">

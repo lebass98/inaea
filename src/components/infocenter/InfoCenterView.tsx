@@ -95,17 +95,7 @@ const InfoCenterView: React.FC = () => {
     navigate('/infocenter');
   };
 
-  const handleEdit = () => {
-    navigate(`/infocenter/edit/${id}`);
-  };
 
-  const handleDelete = () => {
-    if (window.confirm('정말로 이 공지사항을 삭제하시겠습니까?')) {
-      // 삭제 로직 구현
-      console.log('공지사항 삭제:', id);
-      navigate('/infocenter');
-    }
-  };
 
   return (
     <div className="sub-page">

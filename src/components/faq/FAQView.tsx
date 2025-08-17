@@ -109,17 +109,7 @@ const FAQView: React.FC = () => {
     navigate('/faq');
   };
 
-  const handleEdit = () => {
-    navigate(`/faq/edit/${id}`);
-  };
 
-  const handleDelete = () => {
-    if (window.confirm('정말로 이 FAQ를 삭제하시겠습니까?')) {
-      // 삭제 로직 구현
-      console.log('FAQ 삭제:', id);
-      navigate('/faq');
-    }
-  };
 
   return (
     <div className="sub-page">

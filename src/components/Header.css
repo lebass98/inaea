@@ -129,7 +129,7 @@
   color: #111;
   font-weight: 400;
   display: block;
-  background-image: url('/images/icons/icon_header_sel_ar.svg');
+  background-image: url('./images/icons/icon_header_sel_ar.svg');
   background-repeat: no-repeat;
   background-position: right 0.8rem center;
   background-size: 1.6rem;

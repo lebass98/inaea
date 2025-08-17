@@ -239,7 +239,7 @@ const InquiryPage: React.FC = () => {
                             <em className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></em>
                             <span className="attachment-link">{file.name}</span>
                             <button
-                              type="image"
+                              type="button"
                               onClick={() => handleFileRemove(index)}
                               className="file-remove"
                             >

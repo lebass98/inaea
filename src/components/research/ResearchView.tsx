@@ -31,7 +31,7 @@ const ResearchView: React.FC = () => {
 
   // 사이드바 메뉴 데이터
   const sidebarMenuItems = [
-    { id: 'data', label: '연구자료', href: '#data', isActive: false, path: '/research' },
+    { id: 'data', label: '보도자료', href: '#data', isActive: false, path: '/research' },
     { id: 'data', label: '연구자료', href: '#data', isActive: true, path: '/research' },
     { id: 'statistics', label: '설문자료', href: '#statistics', isActive: false, path: '/survey' },
     { id: 'promotion', label: '홍보자료', href: '#promotion', isActive: false, path: '/promotion' }
