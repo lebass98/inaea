@@ -122,60 +122,83 @@ const PromotionView: React.FC = () => {
             <h2>홍보자료</h2>
           </div>
 
-          <div className="sub-content-main">
+          <div className="bbs-view-content">
             {/* 게시글 상세보기 */}
-            <div className="board-view">
-              <div className="board-view-header">
-                <h3 className="board-title">{promotionData.title}</h3>
-                <div className="board-meta">
-                  <span className="meta-item">
-                    <span className="meta-label">작성일</span>
-                    <span className="meta-value">{promotionData.date}</span>
-                  </span>
-                  <span className="meta-item">
-                    <span className="meta-label">작성자</span>
-                    <span className="meta-value">{promotionData.author}</span>
-                  </span>
+            <div className="bbs-view-detail">
+              <div className="bbs-view-header">
+                <div className="bbs-view-group-tit">
+                  <span>정보마당 &gt; 홍보자료</span>
+                </div>
+                <div className="bbs-veiw-title-section">
+                  <h2>{promotionData.title}</h2>
+                </div>
+                <div className="bbs-veiw-meta">
+
                   <span className="meta-item">
                     <span className="meta-label">조회수</span>
                     <span className="meta-value">{promotionData.views}</span>
                   </span>
+                  <span className="meta-item">
+                    <span className="meta-label">작성일</span>
+                    <span className="meta-value">{promotionData.date}</span>
+                  </span>
+
                 </div>
               </div>
 
-              <div className="board-view-content">
-                <div 
-                  className="content-text"
-                  dangerouslySetInnerHTML={{ __html: promotionData.content }}
-                />
-              </div>
+
+
+
 
               {/* 첨부파일 */}
-              {promotionData.hasAttachment && promotionData.attachments && (
-                <div className="board-attachments">
-                  <h4>첨부파일</h4>
+              {promotionData.hasAttachment && (
+                <div className="attachments-section">
                   <ul className="attachment-list">
-                    {promotionData.attachments.map((filename, index) => (
-                      <li key={index} className="attachment-item">
-                        <button
-                          onClick={() => handleDownloadAttachment(filename)}
-                          className="attachment-download"
-                        >
-                          <img src="/images/icons/icon_file-att.svg" alt="첨부파일" />
-                          <span>{filename}</span>
-                        </button>
+                    {promotionData.attachments.map((file, index) => (
+                      <li>
+                        <span key={index} className="attachment-item">
+                          <em className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></em>
+                          <a href="#" className="attachment-link">{file}</a>
+                        </span>
                       </li>
                     ))}
                   </ul>
                 </div>
               )}
+              
+              <div className="bbs-veiw-content-editor">
+                <div dangerouslySetInnerHTML={{ __html: promotionData.content }} />
+              </div>
+              <div className="bbs-view-post-nav">
+                <div className="prev-next-post">
+                  <div className="prev-post">
+                    <strong>이전글</strong>
+                    <a href="#" className="prev-post-link">
+                      <span className="prev-post-title">맞춤형 학업성취도 자율평가 연구결과표 안내자료</span>
+                    </a>
+                  </div>
+                  <div className="next-post">
+                    <strong>다음글</strong>
+                    <a href="#" className="next-post-link">
+                      <span className="next-post-title">2022년 맞춤형 학업성취도 자율평가 연구 권역별 설명회 개최</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
 
               {/* 버튼 영역 */}
-              <div className="board-view-buttons">
-                <button onClick={handleBackToList} className="btn-list">
-                  목록으로
+              <div className="bbs-veiw-actions">
+                <button onClick={handleBackToList} className="btn btn-primary">
+                  목록
                 </button>
               </div>
+
+
+
+
+
+
+
             </div>
           </div>
         </div>

@@ -958,7 +958,7 @@ span.system {
 .category-select {
   border: 1px solid #ddd;
   border-radius: 0.8rem;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   background-color: #fff;
   color: #111;
 }
@@ -1030,7 +1030,7 @@ span.system {
   width: 100%;
   padding: 2rem;
   border: none;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   resize: vertical;
   min-height: 300px;

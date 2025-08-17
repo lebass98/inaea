@@ -31,10 +31,10 @@ const InfoCenterView: React.FC = () => {
 
   // 사이드바 메뉴 데이터
   const sidebarMenuItems = [
-    { id: 'news', label: '보도자료', href: '#news', isActive: true },
-    { id: 'data', label: '연구자료', href: '#data', isActive: false },
-    { id: 'statistics', label: '설문자료', href: '#statistics', isActive: false },
-    { id: 'statistics', label: '홍보자료', href: '#statistics2', isActive: false }
+    { id: 'news', label: '보도자료', href: '#news', isActive: true, path: '/infocenter' },
+    { id: 'data', label: '연구자료', href: '#data', isActive: false, path: '/research' },
+    { id: 'statistics', label: '설문자료', href: '#statistics', isActive: false, path: '/survey' },
+    { id: 'promotion', label: '홍보자료', href: '#promotion', isActive: false, path: '/promotion' }
   ];
 
   // 샘플 데이터 (실제로는 API에서 가져올 데이터)
