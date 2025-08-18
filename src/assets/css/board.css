@@ -197,7 +197,7 @@
   cursor: pointer;
   padding: 0;
   transition: transform 0.2s ease;
-  margin-left: 1.8rem;
+  margin-left: 1rem;
 }
 
 /* 갤러리 모드 스타일링 */
@@ -290,6 +290,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 9rem;
+  word-break: keep-all;
 }
 
 .gallery-meta {

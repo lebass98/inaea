@@ -3,6 +3,10 @@
   min-width: 28rem;
   background: #f8f9fa;
   border-radius: 10px;
+  position: sticky;
+  top: 150px;
+  z-index: 100;
+  align-self: start;
 }
 
 .sub-sidebar h3 {

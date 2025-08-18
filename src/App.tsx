@@ -8,6 +8,7 @@ import { ResearchPage, ResearchView } from './components/research'
 import { SurveyPage, SurveyView } from './components/survey'
 import { PromotionPage, PromotionView } from './components/promotion'
 import { InquiryPage } from './components/inquiry'
+import NotificationPage from './components/notification'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/promotion" element={<PromotionPage />} />
         <Route path="/promotion/view/:id" element={<PromotionView />} />
         <Route path="/inquiry" element={<InquiryPage />} />
+        <Route path="/notification" element={<NotificationPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />

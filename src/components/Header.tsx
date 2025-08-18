@@ -17,7 +17,7 @@ const Header: React.FC = () => {
             <li><Link to="/">체험하기</Link></li>
             <li><Link to="/infocenter">정보마당</Link></li>
             <li><Link to="/notice">소통하기</Link></li>
-            <li><Link to="/">마이페이지</Link></li>
+            <li><Link to="/notification">마이페이지</Link></li>
           </ul>
         </nav>
         <div className="nav-util">

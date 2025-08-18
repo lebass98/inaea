@@ -1,0 +1,326 @@
+/* 알림 페이지 스타일 */
+.notification-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+}
+
+/* selection mode: icon as checkbox */
+.notification-page.selection-mode .notification-icon {
+  background: #fff;
+  border: 2px solid #CFE3FF;
+  color: #62ABFF;
+}
+
+.notification-page.selection-mode .notification-item.selected .notification-icon {
+  background: #62ABFF;
+  border-color: #62ABFF;
+  color: #fff;
+}
+
+/* 헤더 스타일 */
+.notification-header {
+  margin-bottom: 3rem;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-icon {
+  font-size: 2.4rem;
+  color: #62ABFF;
+}
+
+.header-title h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+/* 섹션 스타일 */
+.notification-section {
+  margin-bottom: 4rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* 버튼 스타일 */
+.default-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-select,
+.btn-select-all {
+  background: #f8f9fa;
+  color: #666;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-select:hover,
+.btn-select-all:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-delete-selected,
+.btn-delete-all {
+  background: #f8f9fa;
+  color: #666;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-delete-selected:hover,
+.btn-delete-all:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.btn-cancel {
+  background: #62ABFF;
+  color: #fff;
+  border: 1px solid #62ABFF;
+  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background: #4a9eff;
+  border-color: #4a9eff;
+}
+
+/* 알림 리스트 스타일 */
+.notification-list {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 알림 리스트 스타일 */
+.selection-mode .notification-list {
+  background-color:rgba(33, 66, 129, 0.08);
+}
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem;
+  border-bottom: 1px solid #f1f3f4;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item:hover {
+  background: #f8f9fa;
+}
+
+.notification-item.selected {
+  background: #e3f2fd;
+  border-left: 4px solid #62ABFF;
+}
+
+/* 알림 아이콘 */
+.notification-icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  margin-right: 1.6rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+/* 선택 모드일 때 체크박스 스타일 */
+.notification-item.selected .notification-icon {
+  background-color: #62ABFF !important;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+/* 알림 내용 */
+.notification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.notification-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.notification-time {
+  font-size: 1.4rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+.notification-text {
+  color: #666;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.notification-line {
+  margin-bottom: 0.4rem;
+}
+
+.notification-line:last-child {
+  margin-bottom: 0;
+}
+
+/* 알림 화살표 */
+.notification-arrow {
+  color: #ccc;
+  font-size: 1.8rem;
+  margin-left: 1.6rem;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* 페이지네이션 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 4rem;
+}
+
+.page-btn {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid #e9ecef;
+  background: #fff;
+  color: #666;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+  background: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+.page-btn.active {
+  background: #62ABFF;
+  color: #fff;
+  border-color: #62ABFF;
+}
+
+.page-btn.prev,
+.page-btn.next {
+  font-size: 1.6rem;
+}
+
+.page-ellipsis {
+  color: #666;
+  font-size: 1.4rem;
+  padding: 0 0.4rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .notification-page {
+    padding: 1rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .default-buttons,
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+
+  .notification-item {
+    padding: 1.6rem;
+  }
+
+  .notification-icon {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    margin-right: 1.2rem;
+  }
+
+  .notification-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .pagination {
+    gap: 0.4rem;
+  }
+
+  .page-btn {
+    width: 3.6rem;
+    height: 3.6rem;
+    font-size: 1.2rem;
+  }
+}
