@@ -153,7 +153,7 @@ const PromotionView: React.FC = () => {
                     {promotionData.attachments.map((file, index) => (
                       <li key={index}>
                         <span className="attachment-item">
-                          <em className="attachment-icon"><img src="./images/icons/icon_file-att.svg" alt="첨부파일" /></em>
+                          <em className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></em>
                           <a href="#" className="attachment-link">{file}</a>
                         </span>
                       </li>

@@ -1,30 +1,22 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header: React.FC = () => {
-  const navigate = useNavigate();
   
-  const handleInfoClick = () => {
-    navigate('/infocenter');
-  };
-  
-  const handleContactClick = () => {
-    navigate('/notice');
-  };
   return (
     <header className="header">
       <div className="header-inner">
         <div className="logo">
-          <a href="/"><h1><img src="/images/common/inaea_top_logo.svg" alt="Inaea" /></h1></a>
+          <Link to="/"><h1><img src="/images/common/inaea_top_logo.svg" alt="Inaea" /></h1></Link>
         </div>
         <nav className="navigation">
           <ul className="nav-gnb">
-            <li><a href="#home">평가소개</a></li>
-            <li><a href="#about">체험하기</a></li>
-            <li><a href="#services" onClick={handleInfoClick}>정보마당</a></li>
-            <li><a href="#contact" onClick={handleContactClick}>소통하기</a></li>
-            <li><a href="#contact">마이페이지</a></li>
+            <li><Link to="/">평가소개</Link></li>
+            <li><Link to="/">체험하기</Link></li>
+            <li><Link to="/infocenter">정보마당</Link></li>
+            <li><Link to="/notice">소통하기</Link></li>
+            <li><Link to="/">마이페이지</Link></li>
           </ul>
         </nav>
         <div className="nav-util">

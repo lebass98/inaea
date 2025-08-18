@@ -67,7 +67,7 @@
   width: 2rem;
   height: 2rem;
   display: block;
-  background-image: url('./images/icons/icon_bc_home.svg');
+  background-image: url('/images/icons/icon_bc_home.svg');
   background-size: contain;
   background-repeat: no-repeat;
 }
