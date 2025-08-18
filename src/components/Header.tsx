@@ -8,7 +8,7 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header-inner">
         <div className="logo">
-          <Link to="/"><h1><img src="/images/common/inaea_top_logo.svg" alt="Inaea" /></h1></Link>
+          <Link to="/"><h1><img src="../images/common/inaea_top_logo.svg" alt="Inaea" /></h1></Link>
         </div>
         <nav className="navigation">
           <ul className="nav-gnb">
