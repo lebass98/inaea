@@ -196,7 +196,7 @@ const NotificationPage: React.FC = () => {
           { label: '마이페이지' },
           { label: '알림', isActive: true },
         ]}
-        backgroundImage={getImagePath('images/sub/sub_visual_3.png')}
+        backgroundImage={getImagePath('images/sub/sub_visual_5.png')}
       />
 
       <div className="sub-content">

@@ -1,8 +1,6 @@
 /* 알림 페이지 스타일 */
 .notification-page {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
   background: #fff;
 }
 
