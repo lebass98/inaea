@@ -83,15 +83,15 @@ const NotificationPage: React.FC = () => {
   const getNotificationIcon = (type: string) => {
     switch (type) {
       case 'notice':
-        return '🔔';
+        return <img src={getImagePath('images/icons/icon_notification_notice.svg')} alt="notice" />;
       case 'inquiry':
-        return '💬';
+        return <img src={getImagePath('images/icons/icon_notification_qa.svg')} alt="qa" />;
       case 'faq':
-        return '❓';
+        return <img src={getImagePath('images/icons/icon_notification_faq.svg')} alt="faq" />;
       case 'evaluation':
-        return '📋';
+        return <img src={getImagePath('images/icons/icon_notification_result.svg')} alt="평가결과 아이콘" />;
       default:
-        return '📢';
+        return <img src={getImagePath('images/icons/icon_notification_notice.svg')} alt="notice" />;
     }
   };
 
@@ -157,9 +157,9 @@ const NotificationPage: React.FC = () => {
 
   const renderNotificationItem = (item: NotificationItem) => {
     const isSelected = selectedItems.includes(item.id);
-    const iconContent = isSelectionMode ? (isSelected ? '✓' : '') : getNotificationIcon(item.type);
+    const iconContent = isSelectionMode ? (isSelected ? <img src={getImagePath('images/icons/icon_notification_check_on.svg')} alt="check" /> : '') : getNotificationIcon(item.type);
     const iconStyle: React.CSSProperties = isSelectionMode
-      ? { backgroundColor: isSelected ? '#62ABFF' : '#fff', borderColor: isSelected ? '#62ABFF' : '#CFE3FF' }
+      ? { backgroundColor: isSelected ? '#0064DD' : '#fff', borderColor: isSelected ? '#0064DD' : '#0064DD' }
       : { backgroundColor: getNotificationColor(item.type) };
 
     return (
@@ -182,7 +182,7 @@ const NotificationPage: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="notification-arrow">→</div>
+        <div className="notification-arrow"><img src={getImagePath('images/icons/icon_notification_ar_r_b.svg')} alt="arrow" /></div>
       </div>
     );
   };
