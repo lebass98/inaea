@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
 import '../../assets/css/board.css';
@@ -40,27 +41,27 @@ const PromotionPage: React.FC = () => {
 
   // 샘플 데이터
   const promotionItems: PromotionItem[] = [
-    { id: 21, title: '2025학년도 맞춤형 학업성취도 자율평가 홍보 브로셔', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 20, title: '맞춤형 학업성취도 자율평가 시스템 소개 영상', hasAttachment: true, date: '2025-06-12', views: 142, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 19, title: '2025학년도 평가 참여 학교 홍보 포스터', hasAttachment: false, date: '2025-06-12', views: 98, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 18, title: '맞춤형 학업성취도 자율평가 학부모 안내서', hasAttachment: true, date: '2025-06-12', views: 203, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 17, title: '평가 시스템 개선 홍보 리플렛', hasAttachment: true, date: '2025-06-12', views: 87, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 16, title: '학부모 만족도 향상 홍보 캠페인 자료', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 15, title: '맞춤형 평가 정책 홍보 동영상', hasAttachment: false, date: '2025-06-12', views: 76, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 14, title: '평가 도구 활용도 홍보 가이드', hasAttachment: true, date: '2025-06-12', views: 189, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 13, title: '교사 인식 제고 홍보 자료', hasAttachment: false, date: '2025-06-12', views: 112, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 12, title: '평가 시스템 사용성 홍보 매뉴얼', hasAttachment: true, date: '2025-06-12', views: 95, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 11, title: '학업성취도 평가 정책 홍보 팜플렛', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 10, title: '평가 결과 활용도 홍보 자료집', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 9, title: '학생 만족도 향상 홍보 캠페인', hasAttachment: false, date: '2025-06-12', views: 178, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 8, title: '평가 시스템 사용성 홍보 가이드', hasAttachment: true, date: '2025-06-12', views: 223, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 7, title: '자율평가 운영 홍보 브로셔', hasAttachment: true, date: '2025-06-12', views: 89, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 6, title: '학교별 평가 참여 홍보 포스터', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 5, title: '평가 시스템 개선 홍보 자료', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 4, title: '평가 도구 활용도 홍보 매뉴얼', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 3, title: '평가 참여 학교 홍보 가이드', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 2, title: '평가 시스템 소개 홍보 자료', hasAttachment: true, date: '2025-06-12', views: 198, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' },
-    { id: 1, title: '맞춤형 평가 정책 홍보 소개서', hasAttachment: false, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'promotion' }
+    { id: 21, title: '2025학년도 맞춤형 학업성취도 자율평가 홍보 브로셔', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 20, title: '맞춤형 학업성취도 자율평가 시스템 소개 영상', hasAttachment: true, date: '2025-06-12', views: 142, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 19, title: '2025학년도 평가 참여 학교 홍보 포스터', hasAttachment: false, date: '2025-06-12', views: 98, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 18, title: '맞춤형 학업성취도 자율평가 학부모 안내서', hasAttachment: true, date: '2025-06-12', views: 203, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 17, title: '평가 시스템 개선 홍보 리플렛', hasAttachment: true, date: '2025-06-12', views: 87, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 16, title: '학부모 만족도 향상 홍보 캠페인 자료', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 15, title: '맞춤형 평가 정책 홍보 동영상', hasAttachment: false, date: '2025-06-12', views: 76, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 14, title: '평가 도구 활용도 홍보 가이드', hasAttachment: true, date: '2025-06-12', views: 189, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 13, title: '교사 인식 제고 홍보 자료', hasAttachment: false, date: '2025-06-12', views: 112, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 12, title: '평가 시스템 사용성 홍보 매뉴얼', hasAttachment: true, date: '2025-06-12', views: 95, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 11, title: '학업성취도 평가 정책 홍보 팜플렛', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 10, title: '평가 결과 활용도 홍보 자료집', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 9, title: '학생 만족도 향상 홍보 캠페인', hasAttachment: false, date: '2025-06-12', views: 178, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 8, title: '평가 시스템 사용성 홍보 가이드', hasAttachment: true, date: '2025-06-12', views: 223, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 7, title: '자율평가 운영 홍보 브로셔', hasAttachment: true, date: '2025-06-12', views: 89, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 6, title: '학교별 평가 참여 홍보 포스터', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 5, title: '평가 시스템 개선 홍보 자료', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 4, title: '평가 도구 활용도 홍보 매뉴얼', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 3, title: '평가 참여 학교 홍보 가이드', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 2, title: '평가 시스템 소개 홍보 자료', hasAttachment: true, date: '2025-06-12', views: 198, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' },
+    { id: 1, title: '맞춤형 평가 정책 홍보 소개서', hasAttachment: false, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'promotion' }
   ];
 
   const totalItems = 74;
@@ -110,7 +111,7 @@ const PromotionPage: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_3.svg"
+        backgroundImage={getImagePath('images/sub/sub_visual_3.png')}
       />
 
       <div className="sub-content">
@@ -118,7 +119,7 @@ const PromotionPage: React.FC = () => {
         <SubLeftMenu
           title="정보마당"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg_3.svg"
+          backgroundImage={getImagePath('images/sub/sub_side_bg_3.png')}
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
@@ -189,7 +190,7 @@ const PromotionPage: React.FC = () => {
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
               >
-                <img src="/images/icons/icon_page_prev.svg" alt="이전" />
+                <img src={getImagePath('images/icons/icon_page_prev.svg')} alt="이전" />
               </button>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <button
@@ -205,7 +206,7 @@ const PromotionPage: React.FC = () => {
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
               >
-                <img src="/images/icons/icon_page_next.svg" alt="다음" />
+                <img src={getImagePath('images/icons/icon_page_next.svg')} alt="다음" />
               </button>
             </div>
           </div>

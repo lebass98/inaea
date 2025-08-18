@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
 import '../../assets/css/board.css';
@@ -117,7 +118,7 @@ const FAQView: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_4.svg"
+        backgroundImage={getImagePath('images/sub/sub_visual_4.png')}
       />
 
       <div className="sub-content">
@@ -125,7 +126,7 @@ const FAQView: React.FC = () => {
         <SubLeftMenu
           title="소통하기"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg_4.svg"
+          backgroundImage={getImagePath('images/sub/sub_side_bg_4.png')}
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
@@ -166,7 +167,7 @@ const FAQView: React.FC = () => {
                     {faqDetail.attachments.map((file, index) => (
                       <li key={index}>
                         <span className="attachment-item">
-                          <em className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></em>
+                          <em className="attachment-icon"><img src={getImagePath('images/icons/icon_file-att.svg')} alt="첨부파일" /></em>
                           <a href="#" className="attachment-link">{file}</a>
                         </span>
                       </li>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getImagePath } from '../utils/imagePath';
 import './SubLeftMenu.css';
 
 interface SubLeftMenuProps {
@@ -14,7 +15,7 @@ interface SubLeftMenuProps {
   backgroundImage?: string;
 }
 
-const SubLeftMenu: React.FC<SubLeftMenuProps> = ({ title, menuItems, backgroundImage = '/images/sub/sub_side_bg.svg' }) => {
+const SubLeftMenu: React.FC<SubLeftMenuProps> = ({ title, menuItems, backgroundImage = getImagePath('images/sub/sub_side_bg.svg') }) => {
   const navigate = useNavigate();
 
   const handleMenuClick = (item: { path?: string }) => {
@@ -26,7 +27,7 @@ const SubLeftMenu: React.FC<SubLeftMenuProps> = ({ title, menuItems, backgroundI
   return (
     <div className="sub-sidebar">
       <div className="sub-sidebar-inner">
-        <h3 style={{ backgroundImage: `url(${backgroundImage})` }}>{title}</h3>
+        <h3 style={{ backgroundImage: `url(${backgroundImage || getImagePath('images/sub/sub_side_bg.svg')})` }}>{title}</h3>
         <ul>
           {menuItems.map((item) => (
             <li key={item.id}>

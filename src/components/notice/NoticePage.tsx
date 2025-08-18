@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
 import '../../assets/css/board.css';
@@ -108,7 +109,7 @@ const NoticePage: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_4.svg"
+        backgroundImage={getImagePath('images/sub/sub_visual_4.png')}
       />
 
       <div className="sub-content">
@@ -116,7 +117,7 @@ const NoticePage: React.FC = () => {
         <SubLeftMenu
           title="소통하기"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg_4.svg"
+          backgroundImage={getImagePath('images/sub/sub_side_bg_4.png')}
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
@@ -189,7 +190,7 @@ const NoticePage: React.FC = () => {
                         </td>
                         <td>
                           {notice.hasAttachment && (
-                            <span className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></span>
+                            <span className="attachment-icon"><img src={getImagePath('images/icons/icon_file-att.svg')} alt="첨부파일" /></span>
                           )}
                         </td>
                         <td>{notice.date}</td>
@@ -208,7 +209,7 @@ const NoticePage: React.FC = () => {
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
               >
-                <img src="/images/icons/icon_page_prev.svg" alt="이전" />
+                <img src={getImagePath('images/icons/icon_page_prev.svg')} alt="이전" />
               </button>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <button
@@ -224,7 +225,7 @@ const NoticePage: React.FC = () => {
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
               >
-                <img src="/images/icons/icon_page_next.svg" alt="다음" />
+                <img src={getImagePath('images/icons/icon_page_next.svg')} alt="다음" />
               </button>
             </div>
           </div>

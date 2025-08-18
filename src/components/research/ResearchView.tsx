@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
 import '../../assets/css/board.css';
@@ -55,7 +56,7 @@ const ResearchView: React.FC = () => {
       </ul>
       <br />
       <p>
-        <img src="/images/sub/bbs_cont_01.jpg" alt="연구 이미지" />
+                        <img src={getImagePath('images/sub/bbs_cont_01.jpg')} alt="연구 이미지" />
       </p>
       <br />
       <h4>■ 주요 연구 내용</h4>
@@ -114,7 +115,7 @@ const ResearchView: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_3.svg"
+        backgroundImage={getImagePath('images/sub/sub_visual_3.png')}
       />
 
       <div className="sub-content">
@@ -122,7 +123,7 @@ const ResearchView: React.FC = () => {
         <SubLeftMenu
           title="정보마당"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg_3.svg"
+          backgroundImage={getImagePath('images/sub/sub_side_bg_3.png')}
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
@@ -160,7 +161,7 @@ const ResearchView: React.FC = () => {
                     {researchDetail.attachments.map((file, index) => (
                       <li>
                         <span key={index} className="attachment-item">
-                          <em className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></em>
+                          <em className="attachment-icon"><img src={getImagePath('images/icons/icon_file-att.svg')} alt="첨부파일" /></em>
                           <a href="#" className="attachment-link">{file}</a>
                         </span>
                       </li>

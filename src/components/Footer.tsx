@@ -1,4 +1,5 @@
 import React from 'react';
+import { getImagePath } from '../utils/imagePath';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -9,10 +10,10 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <div className="footer-logos">
               <div className="logo-item">
-                <img src="/images/common/footer-logo_edu.svg" alt="교육부 로고" />
+                <img src={getImagePath('images/common/footer-logo_edu.svg')} alt="교육부 로고" />
               </div>
               <div className="logo-item">
-                <img src="/images/common/footer-logo_kice.svg" alt="KICE 로고" />
+                <img src={getImagePath('images/common/footer-logo_kice.svg')} alt="KICE 로고" />
               </div>
             </div>
             <div className="footer-info">

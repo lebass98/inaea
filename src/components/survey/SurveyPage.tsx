@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
 import '../../assets/css/board.css';
@@ -40,27 +41,27 @@ const SurveyPage: React.FC = () => {
 
   // 샘플 데이터
   const surveyItems: SurveyItem[] = [
-    { id: 21, title: '2025학년도 맞춤형 학업성취도 자율평가 설문조사 결과', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 20, title: '맞춤형 학업성취도 자율평가 참여 학교 설문조사', hasAttachment: true, date: '2025-06-12', views: 142, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 19, title: '2025학년도 평가 참여 교사 설문조사 결과', hasAttachment: false, date: '2025-06-12', views: 98, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 18, title: '맞춤형 학업성취도 자율평가 학부모 설문조사', hasAttachment: true, date: '2025-06-12', views: 203, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 17, title: '평가 시스템 개선 관련 교사 설문조사', hasAttachment: true, date: '2025-06-12', views: 87, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 16, title: '학부모 만족도 설문조사 결과 보고서', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 15, title: '맞춤형 평가 정책 인식도 설문조사', hasAttachment: false, date: '2025-06-12', views: 76, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 14, title: '평가 도구 활용도 교사 설문조사', hasAttachment: true, date: '2025-06-12', views: 189, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 13, title: '교사 인식 조사 설문조사 결과', hasAttachment: false, date: '2025-06-12', views: 112, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 12, title: '평가 시스템 사용성 설문조사', hasAttachment: true, date: '2025-06-12', views: 95, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 11, title: '학업성취도 평가 정책 만족도 설문조사', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 10, title: '평가 결과 활용도 설문조사 보고서', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 9, title: '학생 만족도 설문조사 결과', hasAttachment: false, date: '2025-06-12', views: 178, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 8, title: '평가 시스템 사용성 교사 설문조사', hasAttachment: true, date: '2025-06-12', views: 223, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 7, title: '자율평가 운영 만족도 설문조사', hasAttachment: true, date: '2025-06-12', views: 89, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 6, title: '학교별 평가 참여 현황 설문조사', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 5, title: '평가 시스템 개선 요구사항 설문조사', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 4, title: '평가 도구 활용도 설문조사', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 3, title: '평가 참여 학교 현황 설문조사', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 2, title: '평가 시스템 인식도 설문조사', hasAttachment: true, date: '2025-06-12', views: 198, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' },
-    { id: 1, title: '맞춤형 평가 정책 인식도 설문조사', hasAttachment: false, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'survey' }
+    { id: 21, title: '2025학년도 맞춤형 학업성취도 자율평가 설문조사 결과', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 20, title: '맞춤형 학업성취도 자율평가 참여 학교 설문조사', hasAttachment: true, date: '2025-06-12', views: 142, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 19, title: '2025학년도 평가 참여 교사 설문조사 결과', hasAttachment: false, date: '2025-06-12', views: 98, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 18, title: '맞춤형 학업성취도 자율평가 학부모 설문조사', hasAttachment: true, date: '2025-06-12', views: 203, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 17, title: '평가 시스템 개선 관련 교사 설문조사', hasAttachment: true, date: '2025-06-12', views: 87, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 16, title: '학부모 만족도 설문조사 결과 보고서', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 15, title: '맞춤형 평가 정책 인식도 설문조사', hasAttachment: false, date: '2025-06-12', views: 76, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 14, title: '평가 도구 활용도 교사 설문조사', hasAttachment: true, date: '2025-06-12', views: 189, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 13, title: '교사 인식 조사 설문조사 결과', hasAttachment: false, date: '2025-06-12', views: 112, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 12, title: '평가 시스템 사용성 설문조사', hasAttachment: true, date: '2025-06-12', views: 95, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 11, title: '학업성취도 평가 정책 만족도 설문조사', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 10, title: '평가 결과 활용도 설문조사 보고서', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 9, title: '학생 만족도 설문조사 결과', hasAttachment: false, date: '2025-06-12', views: 178, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 8, title: '평가 시스템 사용성 교사 설문조사', hasAttachment: true, date: '2025-06-12', views: 223, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 7, title: '자율평가 운영 만족도 설문조사', hasAttachment: true, date: '2025-06-12', views: 89, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 6, title: '학교별 평가 참여 현황 설문조사', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 5, title: '평가 시스템 개선 요구사항 설문조사', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 4, title: '평가 도구 활용도 설문조사', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 3, title: '평가 참여 학교 현황 설문조사', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 2, title: '평가 시스템 인식도 설문조사', hasAttachment: true, date: '2025-06-12', views: 198, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' },
+    { id: 1, title: '맞춤형 평가 정책 인식도 설문조사', hasAttachment: false, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'survey' }
   ];
 
   const totalItems = 74;
@@ -110,7 +111,7 @@ const SurveyPage: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_3.svg"
+        backgroundImage={getImagePath('images/sub/sub_visual_3.png')}
       />
 
       <div className="sub-content">
@@ -118,7 +119,7 @@ const SurveyPage: React.FC = () => {
         <SubLeftMenu
           title="정보마당"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg_3.svg"
+          backgroundImage={getImagePath('images/sub/sub_side_bg_3.png')}
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
@@ -189,7 +190,7 @@ const SurveyPage: React.FC = () => {
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
               >
-                <img src="/images/icons/icon_page_prev.svg" alt="이전" />
+                <img src={getImagePath('images/icons/icon_page_prev.svg')} alt="이전" />
               </button>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <button
@@ -205,7 +206,7 @@ const SurveyPage: React.FC = () => {
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
               >
-                <img src="/images/icons/icon_page_next.svg" alt="다음" />
+                <img src={getImagePath('images/icons/icon_page_next.svg')} alt="다음" />
               </button>
             </div>
           </div>

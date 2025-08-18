@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
 import './InfoCenterWrite.css';
 
@@ -71,7 +72,7 @@ const InfoCenterWrite: React.FC = () => {
           { label: '소통하기' },
           { label: '글쓰기', isActive: true }
         ]}
-        backgroundImage="/images/sub/sub_visual_4_1.svg"
+        backgroundImage={getImagePath('images/sub/sub_visual_4_1.svg')}
       />
 
       <div className="notice-write-content">

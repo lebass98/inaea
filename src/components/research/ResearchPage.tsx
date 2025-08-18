@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
 import '../../assets/css/board.css';
@@ -40,27 +41,27 @@ const ResearchPage: React.FC = () => {
 
   // 샘플 데이터
   const researchItems: ResearchItem[] = [
-    { id: 21, title: '2025학년도 맞춤형 학업성취도 자율평가 연구 보고서', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 20, title: '맞춤형 학업성취도 자율평가 연구 결과 분석', hasAttachment: true, date: '2025-06-12', views: 142, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 19, title: '2025학년도 평가 참여 학교 연구 조사 결과', hasAttachment: false, date: '2025-06-12', views: 98, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 18, title: '맞춤형 학업성취도 자율평가 연구 자료', hasAttachment: true, date: '2025-06-12', views: 203, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 17, title: '평가 시스템 개선 연구 보고서', hasAttachment: true, date: '2025-06-12', views: 87, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 16, title: '학부모 만족도 연구 조사 결과', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 15, title: '맞춤형 평가 정책 연구 자료', hasAttachment: false, date: '2025-06-12', views: 76, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 14, title: '평가 도구 개발 연구 논문', hasAttachment: true, date: '2025-06-12', views: 189, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 13, title: '교사 인식 조사 연구 결과', hasAttachment: false, date: '2025-06-12', views: 112, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 12, title: '평가 시스템 연구 소개 자료', hasAttachment: true, date: '2025-06-12', views: 95, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 11, title: '학업성취도 평가 정책 연구 자료', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 10, title: '평가 결과 분석 연구 보고서', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 9, title: '학생 만족도 연구 조사', hasAttachment: false, date: '2025-06-12', views: 178, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 8, title: '평가 시스템 사용 연구 가이드', hasAttachment: true, date: '2025-06-12', views: 223, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 7, title: '자율평가 운영 연구 가이드라인', hasAttachment: true, date: '2025-06-12', views: 89, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 6, title: '학교별 평가 참여 연구 현황', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 5, title: '평가 시스템 개선 연구 안내', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 4, title: '평가 도구 활용 연구', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 3, title: '평가 참여 학교 연구 현황', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 2, title: '평가 시스템 연구 소개 자료', hasAttachment: true, date: '2025-06-12', views: 198, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' },
-    { id: 1, title: '맞춤형 평가 정책 연구 소개', hasAttachment: false, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'research' }
+    { id: 21, title: '2025학년도 맞춤형 학업성취도 자율평가 연구 보고서', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 20, title: '맞춤형 학업성취도 자율평가 연구 결과 분석', hasAttachment: true, date: '2025-06-12', views: 142, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 19, title: '2025학년도 평가 참여 학교 연구 조사 결과', hasAttachment: false, date: '2025-06-12', views: 98, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 18, title: '맞춤형 학업성취도 자율평가 연구 자료', hasAttachment: true, date: '2025-06-12', views: 203, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 17, title: '평가 시스템 개선 연구 보고서', hasAttachment: true, date: '2025-06-12', views: 87, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 16, title: '학부모 만족도 연구 조사 결과', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 15, title: '맞춤형 평가 정책 연구 자료', hasAttachment: false, date: '2025-06-12', views: 76, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 14, title: '평가 도구 개발 연구 논문', hasAttachment: true, date: '2025-06-12', views: 189, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 13, title: '교사 인식 조사 연구 결과', hasAttachment: false, date: '2025-06-12', views: 112, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 12, title: '평가 시스템 연구 소개 자료', hasAttachment: true, date: '2025-06-12', views: 95, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 11, title: '학업성취도 평가 정책 연구 자료', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 10, title: '평가 결과 분석 연구 보고서', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 9, title: '학생 만족도 연구 조사', hasAttachment: false, date: '2025-06-12', views: 178, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 8, title: '평가 시스템 사용 연구 가이드', hasAttachment: true, date: '2025-06-12', views: 223, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 7, title: '자율평가 운영 연구 가이드라인', hasAttachment: true, date: '2025-06-12', views: 89, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 6, title: '학교별 평가 참여 연구 현황', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 5, title: '평가 시스템 개선 연구 안내', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 4, title: '평가 도구 활용 연구', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 3, title: '평가 참여 학교 연구 현황', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 2, title: '평가 시스템 연구 소개 자료', hasAttachment: true, date: '2025-06-12', views: 198, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' },
+    { id: 1, title: '맞춤형 평가 정책 연구 소개', hasAttachment: false, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'research' }
   ];
 
   const totalItems = 74;
@@ -110,7 +111,7 @@ const ResearchPage: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_3.svg"
+        backgroundImage={getImagePath('images/sub/sub_visual_3.png')}
       />
 
       <div className="sub-content">
@@ -118,7 +119,7 @@ const ResearchPage: React.FC = () => {
         <SubLeftMenu
           title="정보마당"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg_3.svg"
+          backgroundImage={getImagePath('images/sub/sub_side_bg_3.png')}
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
@@ -189,7 +190,7 @@ const ResearchPage: React.FC = () => {
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
               >
-                <img src="/images/icons/icon_page_prev.svg" alt="이전" />
+                <img src={getImagePath('images/icons/icon_page_prev.svg')} alt="이전" />
               </button>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <button
@@ -205,7 +206,7 @@ const ResearchPage: React.FC = () => {
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
               >
-                <img src="/images/icons/icon_page_next.svg" alt="다음" />
+                <img src={getImagePath('images/icons/icon_page_next.svg')} alt="다음" />
               </button>
             </div>
           </div>

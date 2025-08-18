@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
 import '../../assets/css/board.css';
@@ -126,7 +127,7 @@ const InquiryPage: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_4.svg"
+        backgroundImage={getImagePath('images/sub/sub_visual_4.png')}
       />
 
       <div className="sub-content">
@@ -134,7 +135,7 @@ const InquiryPage: React.FC = () => {
         <SubLeftMenu
           title="소통하기"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg_4.svg"
+          backgroundImage={getImagePath('images/sub/sub_side_bg_4.png')}
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
@@ -236,14 +237,14 @@ const InquiryPage: React.FC = () => {
                       {formData.attachments.map((file, index) => (
                         <li>
                           <span key={index} className="attachment-item">
-                            <em className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></em>
+                            <em className="attachment-icon"><img src={getImagePath('images/icons/icon_file-att.svg')} alt="첨부파일" /></em>
                             <span className="attachment-link">{file.name}</span>
                             <button
                               type="button"
                               onClick={() => handleFileRemove(index)}
                               className="file-remove"
                             >
-                              <img src="images/icons/icon_att_close.svg" alt="첨부파일 삭제" />
+                              <img src={getImagePath('images/icons/icon_att_close.svg')} alt="첨부파일 삭제" />
                             </button>
                           </span>
                         </li>

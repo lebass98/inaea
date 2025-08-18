@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
 import '../../assets/css/board.css';
@@ -47,27 +48,27 @@ const FAQPage: React.FC = () => {
 
   // 샘플 데이터
   const faqs: FAQItem[] = [
-    { id: 21, title: '맞춤형 학업성취도 자율평가는 어떻게 신청하나요?', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 20, title: '평가 결과는 언제 확인할 수 있나요?', hasAttachment: false, date: '2025-06-12', views: 142, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 19, title: '시스템 접속이 안 될 때는 어떻게 해야 하나요?', hasAttachment: true, date: '2025-06-12', views: 98, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'system' },
-    { id: 18, title: '평가 문항은 어떻게 구성되어 있나요?', hasAttachment: false, date: '2025-06-12', views: 203, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 17, title: '참여 학교 선정 기준은 무엇인가요?', hasAttachment: true, date: '2025-06-12', views: 87, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 16, title: '평가 결과 분석 자료는 어떻게 받을 수 있나요?', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 15, title: '로그인 비밀번호를 잊어버렸어요', hasAttachment: false, date: '2025-06-12', views: 76, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'system' },
-    { id: 14, title: '평가 일정 변경은 언제까지 가능한가요?', hasAttachment: true, date: '2025-06-12', views: 189, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 13, title: '참가 신청서 제출 후 수정이 가능한가요?', hasAttachment: false, date: '2025-06-12', views: 112, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 12, title: '평가 도구 사용법을 배울 수 있나요?', hasAttachment: true, date: '2025-06-12', views: 95, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'system' },
-    { id: 11, title: '평가 기준은 어떻게 정해지나요?', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 10, title: '결과 발표는 어떤 방식으로 이루어지나요?', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 9, title: '시스템 점검 시간은 언제인가요?', hasAttachment: false, date: '2025-06-12', views: 178, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'system' },
-    { id: 8, title: '평가 참여 학교 확정은 언제 알 수 있나요?', hasAttachment: true, date: '2025-06-12', views: 223, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 7, title: '평가 매뉴얼은 어디서 다운로드 받나요?', hasAttachment: true, date: '2025-06-12', views: 89, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'system' },
-    { id: 6, title: '평가 참여 방법에 대한 상세 안내가 있나요?', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 5, title: '설명회 자료는 어떻게 받을 수 있나요?', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 4, title: '평가 도구 사용 시 주의사항이 있나요?', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'system' },
-    { id: 3, title: '참여 학교 선정 과정은 어떻게 되나요?', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 2, title: '평가 결과표 해석 방법을 알려주세요', hasAttachment: true, date: '2025-06-12', views: 198, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' },
-    { id: 1, title: 'FAQ 외 추가 문의는 어디로 해야 하나요?', hasAttachment: false, date: '2025-06-12', views: 156, thumbnail: '/images/sub/bbs_thumb_01.png', category: 'evaluation' }
+    { id: 21, title: '맞춤형 학업성취도 자율평가는 어떻게 신청하나요?', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 20, title: '평가 결과는 언제 확인할 수 있나요?', hasAttachment: false, date: '2025-06-12', views: 142, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 19, title: '시스템 접속이 안 될 때는 어떻게 해야 하나요?', hasAttachment: true, date: '2025-06-12', views: 98, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'system' },
+    { id: 18, title: '평가 문항은 어떻게 구성되어 있나요?', hasAttachment: false, date: '2025-06-12', views: 203, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 17, title: '참여 학교 선정 기준은 무엇인가요?', hasAttachment: true, date: '2025-06-12', views: 87, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 16, title: '평가 결과 분석 자료는 어떻게 받을 수 있나요?', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 15, title: '로그인 비밀번호를 잊어버렸어요', hasAttachment: false, date: '2025-06-12', views: 76, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'system' },
+    { id: 14, title: '평가 일정 변경은 언제까지 가능한가요?', hasAttachment: true, date: '2025-06-12', views: 189, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 13, title: '참가 신청서 제출 후 수정이 가능한가요?', hasAttachment: false, date: '2025-06-12', views: 112, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 12, title: '평가 도구 사용법을 배울 수 있나요?', hasAttachment: true, date: '2025-06-12', views: 95, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'system' },
+    { id: 11, title: '평가 기준은 어떻게 정해지나요?', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 10, title: '결과 발표는 어떤 방식으로 이루어지나요?', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 9, title: '시스템 점검 시간은 언제인가요?', hasAttachment: false, date: '2025-06-12', views: 178, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'system' },
+    { id: 8, title: '평가 참여 학교 확정은 언제 알 수 있나요?', hasAttachment: true, date: '2025-06-12', views: 223, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 7, title: '평가 매뉴얼은 어디서 다운로드 받나요?', hasAttachment: true, date: '2025-06-12', views: 89, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'system' },
+    { id: 6, title: '평가 참여 방법에 대한 상세 안내가 있나요?', hasAttachment: true, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 5, title: '설명회 자료는 어떻게 받을 수 있나요?', hasAttachment: true, date: '2025-06-12', views: 134, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 4, title: '평가 도구 사용 시 주의사항이 있나요?', hasAttachment: false, date: '2025-06-12', views: 167, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'system' },
+    { id: 3, title: '참여 학교 선정 과정은 어떻게 되나요?', hasAttachment: true, date: '2025-06-12', views: 145, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 2, title: '평가 결과표 해석 방법을 알려주세요', hasAttachment: true, date: '2025-06-12', views: 198, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' },
+    { id: 1, title: 'FAQ 외 추가 문의는 어디로 해야 하나요?', hasAttachment: false, date: '2025-06-12', views: 156, thumbnail: getImagePath('images/sub/bbs_thumb_01.png'), category: 'evaluation' }
   ];
 
   const itemsPerPage = 20;
@@ -132,7 +133,7 @@ const FAQPage: React.FC = () => {
       <SubVisual
         title={visualData.title}
         breadcrumbs={visualData.breadcrumbs}
-        backgroundImage="/images/sub/sub_visual_4.svg"
+        backgroundImage={getImagePath('images/sub/sub_visual_4.png')}
       />
 
       <div className="sub-content">
@@ -140,7 +141,7 @@ const FAQPage: React.FC = () => {
         <SubLeftMenu
           title="소통하기"
           menuItems={sidebarMenuItems}
-          backgroundImage="/images/sub/sub_side_bg_4.svg"
+          backgroundImage={getImagePath('images/sub/sub_side_bg_4.png')}
         />
 
         {/* 오른쪽 메인 컨텐츠 */}
@@ -236,7 +237,7 @@ const FAQPage: React.FC = () => {
                         </td>
                         <td>
                           {faq.hasAttachment && (
-                            <span className="attachment-icon"><img src="/images/icons/icon_file-att.svg" alt="첨부파일" /></span>
+                            <span className="attachment-icon"><img src={getImagePath('images/icons/icon_file-att.svg')} alt="첨부파일" /></span>
                           )}
                         </td>
                         <td>{faq.date}</td>
@@ -255,7 +256,7 @@ const FAQPage: React.FC = () => {
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
               >
-                <img src="/images/icons/icon_page_prev.svg" alt="이전" />
+                <img src={getImagePath('images/icons/icon_page_prev.svg')} alt="이전" />
               </button>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <button
@@ -271,7 +272,7 @@ const FAQPage: React.FC = () => {
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
               >
-                <img src="/images/icons/icon_page_next.svg" alt="다음" />
+                <img src={getImagePath('images/icons/icon_page_next.svg')} alt="다음" />
               </button>
             </div>
           </div>

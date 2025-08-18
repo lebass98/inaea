@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getImagePath } from '../utils/imagePath';
 import './Header.css';
 
 const Header: React.FC = () => {
@@ -8,7 +9,7 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header-inner">
         <div className="logo">
-          <Link to="/"><h1><img src="../images/common/inaea_top_logo.svg" alt="Inaea" /></h1></Link>
+          <Link to="/"><h1><img src={getImagePath('images/common/inaea_top_logo.svg')} alt="Inaea" /></h1></Link>
         </div>
         <nav className="navigation">
           <ul className="nav-gnb">
@@ -42,10 +43,10 @@ const Header: React.FC = () => {
           </ul>
           <ul className="nav-util-list">
             <li className="util-alarm-wrap">
-              <a href="#"><img src="/images/icons/icon_header_alram.svg" alt="알림" /><em>1</em></a>
+              <a href="#"><img src={getImagePath('images/icons/icon_header_alram.svg')} alt="알림" /><em>1</em></a>
             </li>
             <li>
-              <a href="#"><img src="/images/icons/icon_header_ham.svg" alt="알림" /></a>
+              <a href="#"><img src={getImagePath('images/icons/icon_header_ham.svg')} alt="알림" /></a>
             </li>
           </ul>
         </div>

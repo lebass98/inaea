@@ -1,4 +1,5 @@
 import React from 'react';
+import { getImagePath } from '../utils/imagePath';
 import './SubVisual.css';
 
 interface SubVisualProps {
@@ -15,13 +16,13 @@ interface SubVisualProps {
 const SubVisual: React.FC<SubVisualProps> = ({ 
   title, 
   breadcrumbs, 
-          backgroundImage = '/images/sub/sub_visual_4_1.svg' 
+  backgroundImage = getImagePath('images/sub/sub_visual_4_1.svg')
 }) => {
   return (
     <div className="visual-section">
       <div 
         className="visual-content"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{ backgroundImage: `url(${backgroundImage || getImagePath('images/sub/sub_visual_4_1.svg')})` }}
       >
         <div className="visual-content-text">
           <h1>{title}</h1>
