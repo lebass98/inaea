@@ -10,37 +10,6 @@
   z-index: 50;
 }
 
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 70px;
-}
-
-/* Logo */
-.header__logo {
-  flex-shrink: 0;
-}
-
-.logo-link {
-  display: block;
-  text-decoration: none;
-}
-
-.logo-image {
-  height: 40px;
-  width: auto;
-}
-
-/* Navigation */
-.header__navigation {
-  flex: 1 1;
-  margin: 0 2rem;
-}
-
 .nav-gnb {
   display: flex;
   list-style: none;
