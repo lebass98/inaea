@@ -224,12 +224,12 @@ const NotificationPage: React.FC = () => {
                       <button className="btn-select" onClick={handleSelectionMode}>
                         삭제
                       </button>
-                      {/* <button className="btn-select-all" onClick={handleSelectAll}>
-                        전체 선택
-                      </button> */}
                     </div>
                   ) : (
                     <div className="action-buttons">
+                      <button className="btn-select-all" onClick={handleSelectAll}>
+                        전체 선택
+                      </button>
                       <button className="btn-delete-selected" onClick={handleDeleteSelected}>
                         선택 삭제
                       </button>
