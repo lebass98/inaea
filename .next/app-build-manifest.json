@@ -35,6 +35,42 @@
       "static/chunks/main-app.js",
       "static/css/app/infocenter/[id]/page.css",
       "static/chunks/app/infocenter/[id]/page.js"
+    ],
+    "/research/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/research/page.css",
+      "static/chunks/app/research/page.js"
+    ],
+    "/research/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/research/[id]/page.css",
+      "static/chunks/app/research/[id]/page.js"
+    ],
+    "/survey/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/survey/page.css",
+      "static/chunks/app/survey/page.js"
+    ],
+    "/promotion/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/promotion/page.css",
+      "static/chunks/app/promotion/page.js"
+    ],
+    "/faq/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/faq/page.css",
+      "static/chunks/app/faq/page.js"
+    ],
+    "/inquiry/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/inquiry/page.css",
+      "static/chunks/app/inquiry/page.js"
     ]
   }
 }

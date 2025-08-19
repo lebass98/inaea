@@ -146,7 +146,7 @@ export default function InfoCenterPage() {
                     onChange={(e) => setSearchKeyword(e.target.value)}
                   />
                 </label>
-                <Button variant="primary" onClick={handleSearch}>검색</Button>
+                <Button  className="search-button" onClick={handleSearch}>검색</Button>
                 {viewMode === 'list' ? (
                   <button onClick={toggleViewMode} className="gal-view-mode-btn">
                     <img src={getImagePath('images/common/bbs_gal_btn.svg')} alt="갤러리 보기" />

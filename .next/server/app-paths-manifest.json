@@ -1,4 +1,10 @@
 {
-  "/page": "app/page.js",
-  "/infocenter/page": "app/infocenter/page.js"
+  "/infocenter/page": "app/infocenter/page.js",
+  "/research/page": "app/research/page.js",
+  "/research/[id]/page": "app/research/[id]/page.js",
+  "/survey/page": "app/survey/page.js",
+  "/promotion/page": "app/promotion/page.js",
+  "/notice/page": "app/notice/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/inquiry/page": "app/inquiry/page.js"
 }
