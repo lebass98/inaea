@@ -1,0 +1,572 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[12].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src\\app\\layout.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* cyrillic-ext */
+@font-face {
+  font-family: '__Inter_e8ce0c';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/55c55f0601d81cf3-s.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: '__Inter_e8ce0c';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/26a46d62cd723877-s.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: '__Inter_e8ce0c';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/97e0cb1ae144a2a9-s.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: '__Inter_e8ce0c';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/581909926a08bbc8-s.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: '__Inter_e8ce0c';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/df0a9ae256c0569c-s.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: '__Inter_e8ce0c';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/8e9860b6e62d6359-s.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: '__Inter_e8ce0c';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/e4af272ccee01ff0-s.p.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}@font-face {font-family: '__Inter_Fallback_e8ce0c';src: local("Arial");ascent-override: 90.20%;descent-override: 22.48%;line-gap-override: 0.00%;size-adjust: 107.40%
+}.__className_e8ce0c {font-family: '__Inter_e8ce0c', '__Inter_Fallback_e8ce0c';font-style: normal
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/components/Header.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+.header {
+  background-color: #fff;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10rem;
+}
+
+.logo h1 {
+  margin: 0;
+  display: flex;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navigation {
+  display: flex;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navigation .nav-gnb {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.navigation .nav-gnb a {
+  color: #111;
+  font-size: 2.2rem;
+  font-weight: 700;
+  width: 12rem;
+  display: block;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.navigation .nav-gnb a:hover {
+  color: #408DED;
+  transition: all 0.2s ease;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.nav-util .nav-user-list {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.nav-util .nav-util-list {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.nav-util {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.nav-user-list .nav-user-name {
+  color: #111;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.nav-user-list .user-log-wrap {
+  color: #545454;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.nav-util .nav-util-list a {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+
+.nav-util select {
+  background: none;
+  border: 1px solid #D9E3ED;
+  background-color: #f4f6f8;
+  border-radius: .8rem;
+  appearance: none;
+  /* 표준 */
+  -webkit-appearance: none;
+  /* 크롬, 사파리 */
+  -moz-appearance: none;
+  /* 파이어폭스 */
+  font-size: 1.5rem;
+  color: #111;
+  font-weight: 400;
+  display: block;
+  background-image: url('/images/icons/icon_header_sel_ar.svg');
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 1.6rem;
+  height: 3.4rem;
+  line-height: 3.4rem;
+}
+
+.nav-util .util-alarm-wrap {
+  position: relative;
+}
+
+.nav-util .util-alarm-wrap em {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
+  border-radius: 10rem;
+  line-height: 2rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nav-util .util-vertical-line {
+  width: 0.2rem;
+  height: 1.6rem;
+  background-color: #DFE3E8;
+  display: block;
+}
+
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/components/Footer.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+.footer {
+  background: #fff;
+  color: #111;
+  padding: 4rem 0;
+  margin-top: auto;
+  border-top: 1px solid #e9ecef;
+  font-family: 'Pretendard GOV', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-section {
+  display: flex;
+  gap: 5.4rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer-logos {
+  display: flex;
+  gap: 2rem;
+}
+
+.logo-item {
+  display: flex;
+}
+
+.footer-info p {
+  color: #111;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+.footer-info p strong {
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 1.6rem; 
+}
+.related-sites-dropdown {
+  height:5.6rem;
+  font-size: 1.8rem;
+  border: none;
+  padding: 0 8.5rem 0 2.4rem;
+  color: #111;
+  line-height: 5.6rem;
+  border-radius: 50rem;
+  background-color: rgba(244, 244, 244, 0.93);
+  box-sizing: border-box;
+}
+
+.related-sites-dropdown:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.copyright {
+  margin-top: 4rem;
+  padding-top:4rem;
+  border-top: 1px solid #E0E0E0;
+}
+.copyright p {
+  color: #545454;
+  font-size: 1.6rem;
+  text-align: right;
+  font-weight: 400;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-logos {
+    justify-content: center;
+  }
+
+  .copyright p {
+    text-align: center;
+  }
+
+  .footer-container {
+    padding: 0 1rem;
+  }
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/assets/css/components.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/assets/css/common.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+.wid-30p {
+    width: 30%;
+}
+
+.wid-40p {
+    width: 40%;
+}
+
+.wid-50p {
+    width: 50%;
+}
+
+.wid-60p {
+    width: 60%;
+}
+
+.wid-70p {
+    width: 70%;
+}
+
+.wid-80p {
+    width: 80%;
+}
+
+.wid-90p {
+    width: 90%;
+}
+
+.wid-100p {
+    width: 100%;
+}
+
+.flex-1 {
+    flex: 1 1;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/App.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+@charset "utf-8";
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/PretendardGOV-Light.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/PretendardGOV-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/PretendardGOV-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/PretendardGOV-SemiBold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/PretendardGOV-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PretendardGOV';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/PretendardGOV-ExtraBold.woff2') format('woff2');
+  font-display: swap;
+}
+
+figure {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Pretendard GOV', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-size: 1.6rem;
+  color: #111;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  border: none;
+  background: none;
+  /*outline: none;*/
+  padding: 0;
+  cursor: pointer;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+em {
+  font-style: normal;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  font-size: 1.5rem;
+  height: 4.8rem;
+  line-height: 4.8rem;
+  padding: 0 3.5rem 0 1.4rem;
+  border-radius: 0.8rem;
+  background-color: #fff;
+  border: 1px solid #D4DDE6;
+  background: none;
+  appearance: none;
+  /* 표준 */
+  -webkit-appearance: none;
+  /* 크롬, 사파리 */
+  -moz-appearance: none;
+  /* 파이어폭스 */
+  background-image: url('/images/icons/icon_sel_ar.svg');
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 1.6rem;
+  box-sizing: border-box;
+}
+textarea {
+  font-family: inherit;
+}
+
+label.input {
+  font-size: 1.5rem;
+  height: 4.8rem;
+  line-height: 4.8rem;
+  border-radius: 0.8rem;
+  background-color: #fff;
+  border: 1px solid #D4DDE6;
+  box-sizing: border-box;
+  position: relative;
+  padding: 0 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+input[type="text"] {
+  font-size: 1.5rem;
+  color: #111;
+  box-sizing: border-box;
+  height: 4.8rem;
+  line-height: 4.8rem;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+button {
+  font-size: 1.8rem;
+  font-weight: 700;
+  height: 4.8rem;
+  line-height: 4.8rem;
+  padding: 0 3.2rem;
+  border: 1px solid #fff;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+}
+
+.search-input input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 40px 0 16px;
+  font-size: 14px;
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+}

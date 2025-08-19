@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { getImagePath } from '../utils/imagePath';
 import './Header.css';
 
@@ -9,15 +9,15 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header-inner">
         <div className="logo">
-          <Link to="/"><h1><img src={getImagePath('images/common/inaea_top_logo.svg')} alt="Inaea" /></h1></Link>
+          <Link href="/"><h1><img src={getImagePath('images/common/inaea_top_logo.svg')} alt="Inaea" /></h1></Link>
         </div>
         <nav className="navigation">
           <ul className="nav-gnb">
-            <li><Link to="/">평가소개</Link></li>
-            <li><Link to="/">체험하기</Link></li>
-            <li><Link to="/infocenter">정보마당</Link></li>
-            <li><Link to="/notice">소통하기</Link></li>
-            <li><Link to="/notification">마이페이지</Link></li>
+            <li><Link href="/">평가소개</Link></li>
+            <li><Link href="/">체험하기</Link></li>
+            <li><Link href="/infocenter">정보마당</Link></li>
+            <li><Link href="/notice">소통하기</Link></li>
+            <li><Link href="/notification">마이페이지</Link></li>
           </ul>
         </nav>
         <div className="nav-util">

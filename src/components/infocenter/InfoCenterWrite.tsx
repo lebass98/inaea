@@ -1,7 +1,10 @@
+'use client';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '../../utils/useRouter';
 import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
+import SubLeftMenu from '../SubLeftMenu';
+import '../../assets/css/board.css';
 import './InfoCenterWrite.css';
 
 const InfoCenterWrite: React.FC = () => {

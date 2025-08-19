@@ -1,5 +1,6 @@
+'use client';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '../utils/useRouter';
 import { getImagePath } from '../utils/imagePath';
 import './SubLeftMenu.css';
 

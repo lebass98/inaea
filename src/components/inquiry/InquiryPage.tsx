@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';

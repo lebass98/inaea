@@ -6,7 +6,7 @@
   font-family: 'PretendardGOV';
   font-style: normal;
   font-weight: 300;
-  src: url('./fonts/PretendardGOV-Light.woff2') format('woff2');
+  src: url('/fonts/PretendardGOV-Light.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -14,7 +14,7 @@
   font-family: 'PretendardGOV';
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/PretendardGOV-Regular.woff2') format('woff2');
+  src: url('/fonts/PretendardGOV-Regular.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -22,7 +22,7 @@
   font-family: 'PretendardGOV';
   font-style: normal;
   font-weight: 500;
-  src: url('./fonts/PretendardGOV-Medium.woff2') format('woff2');
+  src: url('/fonts/PretendardGOV-Medium.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -30,7 +30,7 @@
   font-family: 'PretendardGOV';
   font-style: normal;
   font-weight: 600;
-  src: url('./fonts/PretendardGOV-SemiBold.woff2') format('woff2');
+  src: url('/fonts/PretendardGOV-SemiBold.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -38,7 +38,7 @@
   font-family: 'PretendardGOV';
   font-style: normal;
   font-weight: 700;
-  src: url('./fonts/PretendardGOV-Bold.woff2') format('woff2');
+  src: url('/fonts/PretendardGOV-Bold.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -46,7 +46,7 @@
   font-family: 'PretendardGOV';
   font-style: normal;
   font-weight: 800;
-  src: url('./fonts/PretendardGOV-ExtraBold.woff2') format('woff2');
+  src: url('/fonts/PretendardGOV-ExtraBold.woff2') format('woff2');
   font-display: swap;
 }
 
