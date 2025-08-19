@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { PageLayout, MainContainer, MainContainerProps } from '@/components/layout';
+import { MainContainer, MainContainerProps } from '@/components/layout';
 
 const HomePage: React.FC = () => {
   const mainContainerProps: MainContainerProps = {
@@ -47,11 +47,7 @@ const HomePage: React.FC = () => {
     showFeatures: true
   };
 
-  return (
-    <PageLayout>
-      <MainContainer {...mainContainerProps} />
-    </PageLayout>
-  );
+  return <MainContainer {...mainContainerProps} />;
 };
 
 export default HomePage;
