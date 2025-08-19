@@ -41,11 +41,6 @@
       "static/chunks/main-app.js",
       "static/css/app/inquiry/page.css",
       "static/chunks/app/inquiry/page.js"
-    ],
-    "/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
     ]
   }
 }

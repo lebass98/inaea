@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useNavigate } from '../utils/useRouter';
+import Link from 'next/link';
 import { getImagePath } from '../utils/imagePath';
 import './SubLeftMenu.css';
 
@@ -17,14 +17,6 @@ interface SubLeftMenuProps {
 }
 
 const SubLeftMenu: React.FC<SubLeftMenuProps> = ({ title, menuItems, backgroundImage = getImagePath('images/sub/sub_side_bg.svg') }) => {
-	const navigate = useNavigate();
-
-	const handleMenuClick = (item: { path?: string }) => {
-		if (item.path) {
-			navigate(item.path);
-		}
-	};
-
 	return (
 		<div className="sub-sidebar">
 			<div className="sub-sidebar-inner">
@@ -32,18 +24,21 @@ const SubLeftMenu: React.FC<SubLeftMenuProps> = ({ title, menuItems, backgroundI
 				<ul>
 					{menuItems.map((item) => (
 						<li key={item.id}>
-							<a 
-								href={item.href} 
-								className={`sidebar-link ${item.isActive ? 'active' : ''}`}
-								onClick={(e) => {
-									if (item.path) {
-										e.preventDefault();
-										handleMenuClick(item);
-									}
-								}}
-							>
-								{item.label}
-							</a>
+							{item.path ? (
+								<Link 
+									href={item.path}
+									className={`sidebar-link ${item.isActive ? 'active' : ''}`}
+								>
+									{item.label}
+								</Link>
+							) : (
+								<a 
+									href={item.href} 
+									className={`sidebar-link ${item.isActive ? 'active' : ''}`}
+								>
+									{item.label}
+								</a>
+							)}
 						</li>
 					))}
 				</ul>

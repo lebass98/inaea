@@ -103,7 +103,7 @@ const PromotionPage: React.FC = () => {
   };
 
   const handleTitleClick = (id: number) => {
-    navigate(`/promotion/view/${id}`);
+    navigate(`/promotion/${id}`);
   };
 
   return (

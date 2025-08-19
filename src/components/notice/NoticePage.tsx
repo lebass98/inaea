@@ -100,7 +100,7 @@ const NoticePage: React.FC = () => {
   };
 
   const handleTitleClick = (id: number) => {
-    navigate(`/notice/view/${id}`);
+    navigate(`/notice/${id}`);
   };
 
 
@@ -126,9 +126,9 @@ const NoticePage: React.FC = () => {
           <div className="sub-content-header">
             <h2>공지사항</h2>
 
-            {/* <button onClick={handleWriteClick} className="write-button">
+            <button onClick={() => navigate('/notice/write')} className="write-button">
               글쓰기
-            </button> */}
+            </button>
           </div>
 
           {/* 검색 영역 */}

@@ -121,9 +121,9 @@ const InfoCenterView: React.FC = () => {
           <div className="sub-content-header">
             <h2>보도자료</h2>
 
-            {/* <button onClick={handleWriteClick} className="write-button">
+            <button onClick={() => navigate('/infocenter/write')} className="write-button">
               글쓰기
-            </button> */}
+            </button>
           </div>
           <div className="bbs-view-content">
             {/* 공지사항 상세 내용 */}

@@ -120,9 +120,9 @@ const NoticeView: React.FC = () => {
           <div className="sub-content-header">
             <h2>공지사항</h2>
 
-            {/* <button onClick={handleWriteClick} className="write-button">
+            <button onClick={() => navigate('/notice/write')} className="write-button">
               글쓰기
-            </button> */}
+            </button>
           </div>
           <div className="bbs-view-content">
             {/* 공지사항 상세 내용 */}

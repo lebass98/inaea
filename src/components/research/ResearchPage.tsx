@@ -103,7 +103,7 @@ const ResearchPage: React.FC = () => {
   };
 
   const handleTitleClick = (id: number) => {
-    navigate(`/research/view/${id}`);
+    navigate(`/research/${id}`);
   };
 
   return (

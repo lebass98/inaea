@@ -125,7 +125,7 @@ const FAQPage: React.FC = () => {
   };
 
   const handleTitleClick = (id: number) => {
-    navigate(`/faq/view/${id}`);
+    navigate(`/faq/${id}`);
   };
 
   return (

@@ -103,7 +103,7 @@ const SurveyPage: React.FC = () => {
   };
 
   const handleTitleClick = (id: number) => {
-    navigate(`/survey/view/${id}`);
+    navigate(`/survey/${id}`);
   };
 
   return (
