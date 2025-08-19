@@ -1,5 +1,4 @@
 .main-container {
-  min-height: calc(100vh - 140px); /* Header + Footer height */
   background-color: #f9fafb;
 }
 
