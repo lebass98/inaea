@@ -339,10 +339,1193 @@
     padding: 0 1rem;
   }
 }
-/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/assets/css/components.css ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/assets/css/board.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
 
+.sub-page {
+  padding: 3rem 0 10rem;
+  background-color: #F6FAFF;
+}
+
+/* 메인 컨텐츠 */
+.sub-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+}
+
+.sub-content-wrap {
+  max-width: calc(144rem - 32rem);
+  flex: 1 1;
+}
+
+/* 오른쪽 메인 컨텐츠 */
+.sub-content-main {
+  flex: 1 1;
+  padding: 6rem 4rem;
+  background-color: #fff;
+  border-radius: 2.4rem;
+  box-shadow: 0 6px 13px 0 rgba(18, 74, 126, 0.03);
+  box-sizing: border-box;
+}
+
+/* 오른쪽 메인 컨텐츠 */
+.sub-content-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.sub-content-header h2:before {
+  content: "";
+  display: inline-block;
+  width: 3.6rem;
+  height: 2.2rem;
+  background-image: url('/images/common/subpage-title-dot.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin-right: 1.2rem;
+}
+
+.sub-content-header h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.total-count {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.total-count strong {
+  color: #004870;
+}
+
+.write-button {
+  margin-left: auto;
+  padding: 0.75rem 1.5rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.write-button:hover {
+  background: #218838;
+}
+
+/* 검색 영역 */
+.search-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3.2rem;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search-type {}
+
+/* 탭 메뉴 */
+.tab-menu {
+  margin-bottom: 3.2rem;
+}
+
+.tab-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 50rem;
+}
+
+.tab-menu li {
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #111;
+  transition: all 0.3s ease;
+  height: 5.6rem;
+  line-height: 5.6rem;
+  padding: 0 5rem;
+  border-radius: 20rem;
+  display: inline-block;
+  margin-left:1rem;
+}
+.tab-menu li:first-child {
+  margin-left:0;
+}
+
+.tab-menu li:hover {
+  background-color: #448CE3;
+  color: #fff;
+}
+
+.tab-menu li.active {
+  background-color: #448CE3;
+  color: #fff;
+  font-weight: 600;
+}
+
+.search-input:before {
+  content: "";
+  display: inline-block;
+  margin-right: 0.8rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url('/images/icons/icon_input_srch.svg');
+  background-size: 2.4rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.search-input {
+  min-width: 28rem;
+  position: relative;
+}
+
+.search-type-wrap {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.search-input input {
+  flex: 1 1;
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.search-button {
+  border: 1px solid #408DED;
+  background-color: #F6FAFF;
+  color: #408DED;
+  border-radius: 6px;
+}
+
+/* 뷰 모드 전환 버튼 */
+.gal-view-mode-btn,
+.list-view-mode-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease;
+  margin-left: 1rem;
+}
+
+/* 갤러리 모드 스타일링 */
+.gallery-mode {
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 3.2rem;
+  gap: 3.2rem;
+}
+
+.gallery-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 4rem;
+  gap: 4rem;
+}
+
+
+
+
+.gallery-item {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 1.6rem;
+}
+
+
+.gallery-item-content {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.gallery-grid-2 .gallery-item-content {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* 썸네일 이미지 스타일 */
+.gallery-thumbnail {
+  width: 100%;
+  border-radius: 1.6rem 1.6rem 0 0;
+  overflow: hidden;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 75%;
+}
+
+.gallery-grid-2 .gallery-thumbnail {
+  padding-bottom: 39%;
+  width: 52%;
+  border-radius: 1.6rem 0 0 1.6rem;
+}
+
+.gallery-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-txt-info {
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.gallery-grid-2 .gallery-txt-info {
+  width: 48%;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+.gallery-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 9rem;
+  word-break: keep-all;
+}
+
+.gallery-meta {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: #111;
+}
+
+.gallery-date {
+  font-weight: 500;
+  text-align: right;
+}
+
+.gallery-views {
+  font-weight: 400;
+}
+
+.gallery-attachment {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gallery-attachment img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.gallery-view-btn {
+  background: #408DED;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.gallery-view-btn:hover {
+  background: #2d6bb8;
+  transform: translateY(-2px);
+}
+
+/* 테이블 */
+.notice-table-container {}
+
+.notice-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid #111;
+  table-layout: fixed;
+}
+
+.notice-table th {
+  background: #F4F6F8;
+  padding: 2.1rem 0;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #dee2e6;
+  text-align: center;
+}
+
+.notice-table td {
+  padding: 2.1rem 0;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #111;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.notice-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.category-badge.notice {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.category-badge.info {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.title-button {
+  background: none;
+  border: none;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  transition: color 0.3s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title-button:hover {
+  color: #007bff;
+}
+
+.attachment-icon {
+  vertical-align: middle;
+}
+
+/* 페이지네이션 - 이미지와 같은 형태로 스타일링 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 4rem;
+}
+
+.page-button {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  background: transparent;
+  color: #111;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.6rem;
+  font-weight: 500;
+  min-width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-button:hover {
+  color: #111;
+}
+
+.page-button.active {
+  background: #007bff;
+  color: white;
+  font-weight: 600;
+}
+
+.page-button.prev,
+.page-button.next {
+  color: #ccc;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.page-button.prev:hover,
+.page-button.next:hover {
+  color: #666;
+}
+
+/* 비활성화된 페이지네이션 버튼 스타일 */
+.page-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+.page-button.disabled:hover {
+  color: #ccc;
+  transform: none;
+}
+
+.page-button.disabled img {
+  opacity: 0.5;
+}
+
+
+span.evaluation {
+  background-color: #408DED;
+  color: #fff;
+  border-radius: 0.8rem;
+  padding: 0 1rem;
+  height: 3.2rem;
+  display: inline-block;
+  line-height: 3.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+
+span.system {
+  background-color: #A6CE39;
+  color: #fff;
+  border-radius: 0.8rem;
+  padding: 0 1rem;
+  height: 3.2rem;
+  display: inline-block;
+  line-height: 3.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .sub-content {
+    flex-direction: column;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sub-content {
+    padding: 0 1rem;
+  }
+
+  .sub-content-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .write-button {
+    margin-left: 0;
+    align-self: stretch;
+  }
+
+  .search-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-type-wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    padding: 1.5rem;
+  }
+
+  .gallery-thumbnail {
+    height: 160px;
+  }
+
+  .gallery-title {
+    font-size: 1.4rem;
+    min-height: 3.8rem;
+  }
+
+  .notice-table {
+    font-size: 0.9rem;
+  }
+
+  .notice-table th,
+  .notice-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    padding: 1rem;
+  }
+
+  .gallery-thumbnail {
+    height: 140px;
+  }
+
+  .gallery-title {
+    font-size: 1.3rem;
+    min-height: 3.5rem;
+  }
+
+  .gallery-meta {
+    font-size: 1.2rem;
+  }
+
+  .gallery-view-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* 메인 컨텐츠 */
+.bbs-view-content {
+  line-height: 1.8;
+  color: #333;
+  padding: 6rem 4rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 13px 0 rgba(18, 74, 126, 0.03);
+  overflow: hidden;
+}
+
+.bbs-view-detail {}
+
+/* 공지사항 헤더 */
+.bbs-view-header {
+  padding: 2rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.bbs-view-title-section {
+  margin-bottom: 1.5rem;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.category-badge.bbs-view {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.category-badge.info {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.bbs-view-title-section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+  line-height: 1.4;
+}
+
+.bbs-view-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-label {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.meta-value {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* 첨부파일 */
+.attachments-section {}
+
+.attachments-section h4 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.attachment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3.2rem 0.8rem 1.6rem;
+  margin: 0 !important;
+}
+
+.attachment-item {
+  display: inline-block;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #F5F7FA;
+  border-radius: 1rem;
+}
+
+.attachment-icon img {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+}
+
+.attachment-icon {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.attachment-link {
+  color: #111;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.attachment-link:hover {
+  text-decoration: underline;
+}
+
+.attachment-link:hover {
+  text-decoration: underline;
+}
+
+/* 공지사항 내용 */
+.bbs-view-content {
+  line-height: 1.8;
+  color: #333;
+}
+
+.bbs-veiw-content-editor {
+  font-size: 1.8rem;
+  color: #111;
+  padding: 4rem 0.8rem;
+  line-height: 1.5;
+}
+
+.bbs-view-group-tit {}
+
+.bbs-veiw-title-section h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1;
+}
+
+.bbs-view-group-tit span {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #006C9C;
+  background: rgba(0, 184, 217, 0.12);
+  border-radius: 1rem;
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  line-height: 1;
+}
+
+.bbs-view-header {
+  background-color: #F0F7FD;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 3.2rem;
+  border-radius: 1.6rem;
+}
+
+.bbs-veiw-meta {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.bbs-veiw-meta span {
+  font-size: 1.6rem;
+}
+
+.bbs-veiw-meta span.meta-label {
+  color: #637381;
+}
+
+.bbs-veiw-meta span.meta-value {
+  color: #111;
+}
+
+.bbs-veiw-actions {
+  margin-top: 4rem;
+  text-align: right;
+}
+
+.bbs-view-post-nav {
+  border-top: 1px solid #D4DDE6;
+  border-bottom: 1px solid rgba(145, 158, 171, 0.20);
+}
+
+.bbs-view-post-nav strong {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #111;
+  display: inline-block;
+  width: 10rem;
+  text-align: center;
+}
+
+.bbs-view-post-nav a {
+  color: #637381;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.prev-next-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.prev-next-post .prev-post {
+  border-bottom: 1px dotted rgba(145, 158, 171, 0.20);
+}
+
+.prev-next-post .prev-post,
+.prev-next-post .next-post {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.link-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+  background: #0056b3;
+}
+
+/* 버튼 영역 */
+.bbs-view-actions {
+  padding: 2rem;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+.btn-primary {
+  background: #408DED;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .visual-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .bbs-view-view-content {
+    padding: 0 1rem;
+  }
+
+  .bbs-view-header {
+    padding: 1.5rem;
+  }
+
+  .bbs-view-title-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .bbs-view-meta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bbs-view-content {
+    padding: 1.5rem;
+  }
+
+  .bbs-view-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .action-buttons {
+    justify-content: center;
+  }
+}
+
+/* 문의하기 폼 스타일 */
+.inquiry-form {
+  max-width: 100%;
+}
+
+.form-section {
+  margin-bottom: 3rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.required {
+  color: #dc3545;
+}
+
+.category-selects {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.category-select {
+  border: 1px solid #ddd;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  background-color: #fff;
+  color: #111;
+}
+
+.category-select:focus {
+  outline: none;
+  border-color: #408DED;
+  box-shadow: 0 0 0 2px rgba(64, 141, 237, 0.2);
+}
+
+.form-input {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid #ddd;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  background-color: #fff;
+  color: #111;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #408DED;
+  box-shadow: 0 0 0 2px rgba(64, 141, 237, 0.2);
+}
+
+.content-editor {
+  border: 1px solid #ddd;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.toolbar-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+  background-color: #fff;
+  margin-right: 1rem;
+}
+
+.toolbar-btn {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toolbar-btn:hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.content-textarea {
+  width: 100%;
+  padding: 2rem;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 300px;
+  box-sizing: border-box;
+}
+
+.content-textarea:focus {
+  outline: none;
+}
+
+.file-upload-area {
+  position: relative;
+  border: 2px dashed #ddd;
+  border-radius: 0.8rem;
+  padding: 2rem 3rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  transition: border-color 0.3s ease;
+}
+
+.file-upload-area:hover {
+  border-color: #408DED;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-placeholder {
+  pointer-events: none;
+}
+
+.upload-icon {
+  text-indent: -9999px;
+  background-image: url('/images/icons/icon_upload.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 4rem;
+  height: 4rem;
+  display: inline-block;
+}
+
+.upload-text {
+  font-size: 1.6rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.attached-files {
+  margin-top: 1.5rem;
+}
+
+.attached-file {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.file-icon {
+  font-size: 1.6rem;
+}
+
+.file-name {
+  flex: 1 1;
+  font-size: 1.4rem;
+  color: #111;
+}
+
+.file-remove {
+  cursor: pointer;
+  background:none;
+  line-height: 1;
+  border:none;
+  padding:0;
+  margin:0;
+  height:auto;  
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.6rem;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.form-notice {
+  font-size: 1.8rem;
+  color: #111;
+  font-weight: 400;
+  flex: 1 1;
+}
+
+.submit-btn {
+  background-color: #408DED;
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2d7dd2;
+}
+
+/* 반응형 디자인 - 문의하기 */
+@media (max-width: 768px) {
+  .category-selects {
+    flex-direction: column;
+  }
+  
+  .form-footer {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
+  
+  .editor-toolbar {
+    gap: 0.3rem;
+  }
+  
+  .toolbar-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 1.1rem;
+  }
+}
 /*!***********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/assets/css/common.css ***!
   \***********************************************************************************************************************************************************************************************************************************************************************/
@@ -381,192 +1564,161 @@
 .flex-1 {
     flex: 1 1;
 }
-/*!*********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/App.css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************/
-@charset "utf-8";
+/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/assets/css/components.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************/
 
-@font-face {
-  font-family: 'PretendardGOV';
-  font-style: normal;
-  font-weight: 300;
-  src: url('/fonts/PretendardGOV-Light.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PretendardGOV';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/PretendardGOV-Regular.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PretendardGOV';
-  font-style: normal;
-  font-weight: 500;
-  src: url('/fonts/PretendardGOV-Medium.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PretendardGOV';
-  font-style: normal;
-  font-weight: 600;
-  src: url('/fonts/PretendardGOV-SemiBold.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PretendardGOV';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/fonts/PretendardGOV-Bold.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PretendardGOV';
-  font-style: normal;
-  font-weight: 800;
-  src: url('/fonts/PretendardGOV-ExtraBold.woff2') format('woff2');
-  font-display: swap;
-}
-
-figure {
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/app/globals.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
-}
-
-body {
-  margin: 0;
-  font-family: 'Pretendard GOV', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
-  font-size: 1.6rem;
-  color: #111;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 html {
   font-size: 62.5%;
 }
 
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-size: 1.6rem;
+}
+
+ol,
 ul {
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
+blockquote,
+q {
+  quotes: none;
 }
 
-p {
-  margin: 0;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 
-button {
-  border: none;
-  background: none;
-  /*outline: none;*/
-  padding: 0;
-  cursor: pointer;
-  color: #333;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 a {
+  color: inherit;
   text-decoration: none;
-  color: #333;
+  outline: none
 }
 
-em {
-  font-style: normal;
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
 }
 
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
 
-select {
-  font-size: 1.5rem;
-  height: 4.8rem;
-  line-height: 4.8rem;
-  padding: 0 3.5rem 0 1.4rem;
-  border-radius: 0.8rem;
-  background-color: #fff;
-  border: 1px solid #D4DDE6;
-  background: none;
-  appearance: none;
-  /* 표준 */
-  -webkit-appearance: none;
-  /* 크롬, 사파리 */
-  -moz-appearance: none;
-  /* 파이어폭스 */
-  background-image: url('/images/icons/icon_sel_ar.svg');
-  background-repeat: no-repeat;
-  background-position: right 0.8rem center;
-  background-size: 1.6rem;
-  box-sizing: border-box;
-}
-textarea {
-  font-family: inherit;
-}
-
-label.input {
-  font-size: 1.5rem;
-  height: 4.8rem;
-  line-height: 4.8rem;
-  border-radius: 0.8rem;
-  background-color: #fff;
-  border: 1px solid #D4DDE6;
-  box-sizing: border-box;
-  position: relative;
-  padding: 0 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-input[type="text"] {
-  font-size: 1.5rem;
-  color: #111;
-  box-sizing: border-box;
-  height: 4.8rem;
-  line-height: 4.8rem;
-}
-
-input:focus-visible {
-  outline: none;
-}
-
-button {
-  font-size: 1.8rem;
-  font-weight: 700;
-  height: 4.8rem;
-  line-height: 4.8rem;
-  padding: 0 3.2rem;
-  border: 1px solid #fff;
-  border-radius: 0.8rem;
-  box-sizing: border-box;
-}
-
-.search-input input {
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  padding: 0 40px 0 16px;
-  font-size: 14px;
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  background-size: 16px;
-}
+                                                                                             

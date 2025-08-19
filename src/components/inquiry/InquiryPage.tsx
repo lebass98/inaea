@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
-import '../../assets/css/board.css';
+
 
 interface InquiryForm {
   category1: string;

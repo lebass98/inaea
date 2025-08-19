@@ -4,7 +4,7 @@ import { useParams, useNavigate } from '../../utils/useRouter';
 import { getImagePath } from '../../utils/imagePath';
 import SubVisual from '../SubVisual';
 import SubLeftMenu from '../SubLeftMenu';
-import '../../assets/css/board.css';
+
 
 interface SurveyItem {
   id: number;

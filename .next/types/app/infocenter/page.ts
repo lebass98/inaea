@@ -1,4 +1,4 @@
-// File: E:\wordncode\React\inaea\src\app\infocenter\page.tsx
+// File: C:\wordncode\inaea\inaea\src\app\infocenter\page.tsx
 import * as entry from '../../../../src/app/infocenter/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

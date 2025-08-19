@@ -12,17 +12,17 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/notice/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/notice/page.css",
-      "static/chunks/app/notice/page.js"
-    ],
     "/infocenter/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/infocenter/page.css",
       "static/chunks/app/infocenter/page.js"
+    ],
+    "/notice/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/notice/page.css",
+      "static/chunks/app/notice/page.js"
     ],
     "/faq/page": [
       "static/chunks/webpack.js",
@@ -30,17 +30,28 @@
       "static/css/app/faq/page.css",
       "static/chunks/app/faq/page.js"
     ],
+    "/faq/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/faq/[id]/page.css",
+      "static/chunks/app/faq/[id]/page.js"
+    ],
     "/notification/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/notification/page.css",
       "static/chunks/app/notification/page.js"
     ],
-    "/inquiry/page": [
+    "/infocenter/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/inquiry/page.css",
-      "static/chunks/app/inquiry/page.js"
+      "static/css/app/infocenter/[id]/page.css",
+      "static/chunks/app/infocenter/[id]/page.js"
+    ],
+    "/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/not-found.js"
     ]
   }
 }
