@@ -1,0 +1,537 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/components/SubVisual.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+/* 상단 비주얼 이미지 */
+.visual-section {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.visual-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10rem;
+  box-sizing: border-box;
+}
+
+.visual-content .visual-content-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: #fff;
+  gap: 1rem;
+}
+
+.visual-content-text h1 {
+  line-height: 6.4rem;
+  font-size: 4.8rem;
+  font-weight: 800;
+}
+
+.bread-crumb {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bread-crumb li {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.bread-crumb li:before {
+  content: "";
+  display: inline-block;
+  width: .4rem;
+  height: .4rem;
+  background-color: #fff;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 0 1.2rem;
+}
+
+.bread-crumb li:first-child:before {
+  display: none;
+}
+
+.bread-crumb-home a {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  background-image: url('/images/icons/icon_bc_home.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bread-crumb-home span {
+  display: none;
+}
+
+.bread-crumb-active a {
+  color: #fff;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .visual-content-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/components/SubLeftMenu.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+/* 왼쪽 사이드바 */
+.sub-sidebar {
+  min-width: 28rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 150px;
+  z-index: 50rk;
+  align-self: start;
+  height: 100vh;
+}
+
+.sub-sidebar h3 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 3.2rem 2.4rem;
+  border-radius: 1.6rem;
+  min-height: 16rem;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  line-height: 1;
+}
+
+.sub-sidebar .sub-sidebar-inner {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 1.6rem;
+  background-color: #fff;
+  border-radius: 2.4rem;
+  box-shadow: 0 6px 13px 0 rgba(18, 74, 126, 0.03);
+  box-sizing: border-box;
+}
+
+.sub-sidebar .sub-sidebar-inner ul {
+  gap: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.sidebar-link {
+  border-radius: 10rem;
+  padding: 0 1.6rem 0 2.4rem;
+  display: block;
+  height: 6.4rem;
+  line-height: 6.4rem;
+  color: #111;
+  font-weight: 600;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.sidebar-link.active,
+.sidebar-link:hover {
+  background: #62ABFF;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .sub-sidebar {
+    width: 100%;
+  }
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/components/notification/NotificationPage.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+/* 알림 페이지 스타일 */
+.notification-page {
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* selection mode: icon as checkbox */
+.notification-page.selection-mode .notification-icon {
+  background: #fff;
+  border: 2px solid #CFE3FF;
+  color: #62ABFF;
+}
+
+.notification-page.selection-mode .notification-item.selected .notification-icon {
+  background: #62ABFF;
+  border-color: #62ABFF;
+  color: #fff;
+}
+
+/* 섹션 스타일 */
+.notification-section {
+  margin-bottom: 4rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+/* 버튼 스타일 */
+.default-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-select,
+.btn-select-all {
+  border: 1px solid rgba(145, 158, 171, 0.32);
+  padding: 0 1.6rem;
+  min-width: 9.6rem;
+  height: 4rem;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-select:hover,
+.btn-select-all:hover {
+  background: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-delete-selected,
+.btn-delete-all {
+  border: 1px solid rgba(145, 158, 171, 0.32);
+  padding: 0 1.6rem;
+  min-width: 9.6rem;
+  height: 4rem;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-delete-selected:hover,
+.btn-delete-all:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.btn-cancel {
+  background: #408DED;
+  border: 1px solid #408DED;
+  padding: 0 1.6rem;
+  color: #fff;
+  min-width: 9.6rem;
+  height: 4rem;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background: #3070d0;
+  border-color: #3070d0;
+}
+
+/* 알림 리스트 스타일 */
+.notification-list {
+  background: #fff;
+  padding: 2.4rem;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 알림 리스트 스타일 */
+.selection-mode .notification-list {
+  background-color: rgba(33, 66, 129, 0.08);
+}
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem;
+  border: 1px solid #f1f3f4;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  border-radius: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.notification-item:last-child {
+  margin-bottom: 0;
+}
+
+.notification-item:hover {
+  border-color: #0064dd;
+  box-shadow: 0 2px 8px rgba(0, 100, 221, 0.1);
+}
+
+.notification-item.selected {
+  background-color: #DFEDFE;
+  border: 1px solid #0064dd;
+}
+
+/* 알림 아이콘 */
+.notification-icon {
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  margin-right: 1.6rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+/* 선택 모드일 때 체크박스 스타일 */
+.notification-item.selected .notification-icon {
+  background-color: #0064DD !important;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+/* 알림 내용 */
+.notification-content {
+  flex: 1 1;
+  min-width: 0;
+}
+
+.notification-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.notification-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.notification-time {
+  font-size: 1.4rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+.notification-text {
+  color: #666;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.notification-line {
+  margin-bottom: 0.4rem;
+}
+
+.notification-line:last-child {
+  margin-bottom: 0;
+}
+
+/* 알림 화살표 */
+.notification-item.selected .notification-arrow {
+  opacity: 1;
+}
+
+.notification-arrow {
+  color: #ccc;
+  font-size: 1.8rem;
+  margin-left: 1.6rem;
+  flex-shrink: 0;
+  align-self: center;
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
+.notification-arrow img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+/* 알림 액션 영역 */
+.notification-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* 개별 삭제 버튼 */
+.btn-delete-item {
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 1px solid #e9ecef;
+  background: #fff;
+  color: #666;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+}
+
+.btn-delete-item:hover {
+  background: #ff4757;
+  color: #fff;
+  border-color: #ff4757;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* 선택 모드일 때는 삭제 버튼 숨김 */
+.notification-item.selected .btn-delete-item {
+  display: none;
+}
+
+/* 페이지네이션 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 4rem;
+}
+
+.page-btn {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid #e9ecef;
+  background: #fff;
+  color: #666;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+  background: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+.page-btn.active {
+  background: #62ABFF;
+  color: #fff;
+  border-color: #62ABFF;
+}
+
+.page-btn.prev,
+.page-btn.next {
+  font-size: 1.6rem;
+}
+
+.page-ellipsis {
+  color: #666;
+  font-size: 1.4rem;
+  padding: 0 0.4rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .notification-page {
+    padding: 1rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .default-buttons,
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+
+  .notification-item {
+    padding: 1.6rem;
+  }
+
+  .notification-icon {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    margin-right: 1.2rem;
+  }
+
+  .notification-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .pagination {
+    gap: 0.4rem;
+  }
+
+  .page-btn {
+    width: 3.6rem;
+    height: 3.6rem;
+    font-size: 1.2rem;
+  }
+}
+

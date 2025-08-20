@@ -17,29 +17,6 @@
   color: #fff;
 }
 
-/* 헤더 스타일 */
-.notification-header {
-  margin-bottom: 3rem;
-}
-
-.header-title {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.header-icon {
-  font-size: 2.4rem;
-  color: #62ABFF;
-}
-
-.header-title h1 {
-  font-size: 3.2rem;
-  font-weight: 700;
-  color: #333;
-  margin: 0;
-}
-
 /* 섹션 스타일 */
 .notification-section {
   margin-bottom: 4rem;
@@ -68,8 +45,22 @@
 .btn-select,
 .btn-select-all {
   border: 1px solid rgba(145, 158, 171, 0.32);
-  padding:0 1.6rem;
+  padding: 0 1.6rem;
   min-width: 9.6rem;
+  height: 4rem;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-select:hover,
+.btn-select-all:hover {
+  background: #f8f9fa;
+  border-color: #dee2e6;
 }
 
 .action-buttons {
@@ -80,8 +71,16 @@
 .btn-delete-selected,
 .btn-delete-all {
   border: 1px solid rgba(145, 158, 171, 0.32);
-  padding:0 1.6rem;
+  padding: 0 1.6rem;
   min-width: 9.6rem;
+  height: 4rem;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btn-delete-selected:hover,
@@ -93,9 +92,20 @@
 .btn-cancel {
   background: #408DED;
   border: 1px solid #408DED;
-  padding:0 1.6rem;
-  color:#fff;
+  padding: 0 1.6rem;
+  color: #fff;
   min-width: 9.6rem;
+  height: 4rem;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background: #3070d0;
+  border-color: #3070d0;
 }
 
 /* 알림 리스트 스타일 */
@@ -109,7 +119,7 @@
 
 /* 알림 리스트 스타일 */
 .selection-mode .notification-list {
-  background-color:rgba(33, 66, 129, 0.08);
+  background-color: rgba(33, 66, 129, 0.08);
 }
 
 .notification-item {
@@ -121,13 +131,22 @@
   transition: all 0.2s ease;
   position: relative;
   border-radius: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.notification-item:last-child {
+  margin-bottom: 0;
+}
+
+.notification-item:hover {
+  border-color: #0064dd;
+  box-shadow: 0 2px 8px rgba(0, 100, 221, 0.1);
 }
 
 .notification-item.selected {
   background-color: #DFEDFE;
   border: 1px solid #0064dd;
 }
-
 
 /* 알림 아이콘 */
 .notification-icon {
@@ -157,11 +176,10 @@
   min-width: 0;
 }
 
-.notification-header {
+.notification-item-header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
   margin-bottom: 0.8rem;
 }
 
@@ -203,6 +221,51 @@
   flex-shrink: 0;
   align-self: center;
   opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
+.notification-arrow img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+/* 알림 액션 영역 */
+.notification-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* 개별 삭제 버튼 */
+.btn-delete-item {
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 1px solid #e9ecef;
+  background: #fff;
+  color: #666;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+}
+
+.btn-delete-item:hover {
+  background: #ff4757;
+  color: #fff;
+  border-color: #ff4757;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* 선택 모드일 때는 삭제 버튼 숨김 */
+.notification-item.selected .btn-delete-item {
+  display: none;
 }
 
 /* 페이지네이션 */
@@ -280,7 +343,7 @@
     margin-right: 1.2rem;
   }
 
-  .notification-header {
+  .notification-item-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;

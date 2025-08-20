@@ -18,8 +18,7 @@ interface NotificationItem {
 const NotificationPage: React.FC = () => {
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const [isSelectionMode, setIsSelectionMode] = useState(false);
-
-  const todayNotifications: NotificationItem[] = [
+  const [todayNotifications, setTodayNotifications] = useState<NotificationItem[]>([
     {
       id: 1,
       type: 'notice',
@@ -48,9 +47,9 @@ const NotificationPage: React.FC = () => {
       time: '오전 09:12',
       content: '평가결과가 등록되었습니다.\n[2005년][자율평가][맞춤형 학업성취도 자율평가(초6)(2005-자율-본1]'
     }
-  ];
+  ]);
 
-  const previousNotifications: NotificationItem[] = [
+  const [previousNotifications, setPreviousNotifications] = useState<NotificationItem[]>([
     {
       id: 5,
       type: 'notice',
@@ -79,7 +78,7 @@ const NotificationPage: React.FC = () => {
       time: '1월15일',
       content: '평가결과가 등록되었습니다.\n[2005년][자율평가][맞춤형 학업성취도 자율평가(초6)(2005-자율-본1]'
     }
-  ];
+  ]);
 
   const getNotificationIcon = (type: string) => {
     switch (type) {
@@ -133,15 +132,41 @@ const NotificationPage: React.FC = () => {
   };
 
   const handleDeleteSelected = () => {
-    console.log('삭제할 항목:', selectedItems);
+    if (selectedItems.length === 0) {
+      alert('삭제할 항목을 선택해주세요.');
+      return;
+    }
+    
+    // 선택된 항목들을 제거
+    setTodayNotifications(prev => prev.filter(item => !selectedItems.includes(item.id)));
+    setPreviousNotifications(prev => prev.filter(item => !selectedItems.includes(item.id)));
+    
+    // 선택 모드 종료 및 선택 항목 초기화
     setIsSelectionMode(false);
     setSelectedItems([]);
+    
+    alert(`${selectedItems.length}개의 알림이 삭제되었습니다.`);
   };
 
   const handleDeleteAll = () => {
-    console.log('전체 삭제');
-    setIsSelectionMode(false);
-    setSelectedItems([]);
+    if (todayNotifications.length === 0 && previousNotifications.length === 0) {
+      alert('삭제할 알림이 없습니다.');
+      return;
+    }
+    
+    const totalCount = todayNotifications.length + previousNotifications.length;
+    
+    if (window.confirm(`모든 알림(${totalCount}개)을 삭제하시겠습니까?`)) {
+      // 모든 알림 제거
+      setTodayNotifications([]);
+      setPreviousNotifications([]);
+      
+      // 선택 모드 종료 및 선택 항목 초기화
+      setIsSelectionMode(false);
+      setSelectedItems([]);
+      
+      alert('모든 알림이 삭제되었습니다.');
+    }
   };
 
   const handleItemClick = (id: number) => {
@@ -156,6 +181,21 @@ const NotificationPage: React.FC = () => {
     }
   };
 
+  const handleDeleteItem = (id: number, event: React.MouseEvent) => {
+    event.stopPropagation(); // 부모 요소의 클릭 이벤트 방지
+    
+    if (window.confirm('이 알림을 삭제하시겠습니까?')) {
+      // 해당 알림을 제거
+      setTodayNotifications(prev => prev.filter(item => item.id !== id));
+      setPreviousNotifications(prev => prev.filter(item => item.id !== id));
+      
+      // 선택된 항목에서도 제거
+      setSelectedItems(prev => prev.filter(item => item !== id));
+      
+      alert('알림이 삭제되었습니다.');
+    }
+  };
+
   const renderNotificationItem = (item: NotificationItem) => {
     const isSelected = selectedItems.includes(item.id);
     const iconContent = isSelectionMode ? (isSelected ? <img src={getImagePath('images/icons/icon_notification_check_on.svg')} alt="check" /> : '') : getNotificationIcon(item.type);
@@ -165,7 +205,7 @@ const NotificationPage: React.FC = () => {
 
     return (
       <div 
-        key={item.id}
+        key={`notification-${item.id}`}
         className={`notification-item ${isSelected ? 'selected' : ''}`}
         onClick={() => handleItemClick(item.id)}
       >
@@ -173,17 +213,17 @@ const NotificationPage: React.FC = () => {
           {iconContent}
         </div>
         <div className="notification-content">
-          <div className="notification-header">
+          <div className="notification-item-header">
             <span className="notification-title">{item.title}</span>
             <span className="notification-time">{item.time}</span>
           </div>
           <div className="notification-text">
             {item.content.split('\n').map((line, index) => (
-              <div key={index} className="notification-line">{line}</div>
+              <div key={`line-${item.id}-${index}`} className="notification-line">{line}</div>
             ))}
           </div>
         </div>
-        <div className="notification-arrow"><img src={getImagePath('images/icons/icon_notification_ar_r_b.svg')} alt="arrow" /></div>
+
       </div>
     );
   };
